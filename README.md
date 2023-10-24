@@ -3,10 +3,13 @@
 > This repository 
 
 <p align="center">
-  <a target="_blank" href=""><img src="https://img.shields.io/badge/Game%20Developer-E60012.svg?style=for-the-badge&logo=Game-Developer&logoColor=white" /></a>&nbsp;
-  <a target="_blank"href=""><img src="https://img.shields.io/badge/PROGRAMMING%20LANGUAGES-orange?style=for-the-badge&color=00796B" /></a>&nbsp;
-  <a target="_blank" href=""><img src="https://img.shields.io/badge/TEXT%20EDITORS-orange?style=for-the-badge&color=4CAF50" /></a>&nbsp;
-  <a target="_blank" href=""><img src="https://img.shields.io/badge/OTHERS-orange?style=for-the-badge&color=607D8B" /></a>&nbsp;
+  <a target="_blank" href=""><img src="https://img.shields.io/badge/Game%20Developer-E60012.svg?style=for-the-badge&logo=Game-Developer&logoColor=white" /></a>
+  <a target="_blank"href=""><img src="https://img.shields.io/badge/PROGRAMMING%20LANGUAGES-orange?style=for-the-badge&color=00796B" /></a>
+  <a target="_blank" href=""><img src="https://img.shields.io/badge/Microsoft%20SharePoint-0078D4.svg?style=for-the-badge&logo=Microsoft-SharePoint&logoColor=white" /></a>
+  <a target="_blank" href=""><img src="https://img.shields.io/badge/Trello-0052CC.svg?style=for-the-badge&logo=Trello&logoColor=white" /></a>
+  <a target="_blank" href=""><img src="https://img.shields.io/badge/TEXT%20EDITORS-orange?style=for-the-badge&color=4CAF50" /></a>
+  <a target="_blank" href=""><img src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white" /></a>
+  <a target="_blank" href=""><img src="https://img.shields.io/badge/OTHERS-orange?style=for-the-badge&color=607D8B" /></a>
 </p>
 
 ---
