@@ -1,0 +1,10 @@
+NavigationAgent3D
+MeshInstance3D
+CharacterBody3D
+Marker3D
+NavigationRegion3D
+NavigationLink3D
+Timer
+DirectionalLight3D
+WorldEnvironment
+CollisionShape3D
