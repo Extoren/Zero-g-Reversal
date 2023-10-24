@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cde8kwoojubor"]
+
+[ext_resource type="PackedScene" uid="uid://bpfwjm3lwciw3" path="res://Visuell test 2.glb" id="1_hkwm5"]
+
+[node name="Visuell test 2" instance=ExtResource("1_hkwm5")]

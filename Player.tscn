@@ -1,10 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://v8yqyd4bj0eq"]
+[gd_scene load_steps=9 format=3 uid="uid://v8yqyd4bj0eq"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_4jjt4"]
+[ext_resource type="Script" path="res://Player.gd" id="1_4jjt4"]
+[ext_resource type="PackedScene" uid="uid://bpfwjm3lwciw3" path="res://Visuell test 2.glb" id="3_7s5mk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_moknm"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_shcoj"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_eowsd"]
+
+[sub_resource type="Animation" id="Animation_ohdpk"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_pdbrb"]
+resource_name = "Jump"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+
+[sub_resource type="Animation" id="Animation_nk7dn"]
+resource_name = "Run"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_po4t4"]
+_data = {
+"Idle": SubResource("Animation_ohdpk"),
+"Jump": SubResource("Animation_pdbrb"),
+"Run": SubResource("Animation_nk7dn")
+}
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_4jjt4")
@@ -13,7 +37,16 @@ script = ExtResource("1_4jjt4")
 shape = SubResource("CapsuleShape3D_moknm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_shcoj")
+mesh = SubResource("CapsuleMesh_eowsd")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.998979, 0.0451712, 0, -0.0451712, 0.998979, 0, 0.485951, -0.303015)
+fov = 109.8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_po4t4")
+}
+
+[node name="Visuell test 2" parent="." instance=ExtResource("3_7s5mk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599541, -0.192633, -1.17995)
