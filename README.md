@@ -36,6 +36,9 @@ Max           [![Godot Engine](https://img.shields.io/badge/Godot%20Engine-478CB
               [![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/)
               [![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white)](https://www.blender.org/)
 
+Nicklas       [![Godot Engine](https://img.shields.io/badge/Godot%20Engine-478CBF.svg?style=for-the-badge&logo=Godot-Engine&logoColor=white)](https://godotengine.org/)
+              [![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/)
+              [![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white)](https://www.blender.org/)
 
 Aksel         [![Godot Engine](https://img.shields.io/badge/Godot%20Engine-478CBF.svg?style=for-the-badge&logo=Godot-Engine&logoColor=white)](https://godotengine.org/)
               [![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/)
