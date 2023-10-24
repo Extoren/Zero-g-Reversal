@@ -1,4 +1,4 @@
-<p align="center"> <img src="https://github.com/Extoren/Zero-g-Reversal/assets/62182617/119b930d-7b28-438b-a0c4-cd0be1c16e46" width="1000" height="500"/></p>
+<p align="center"> <img src="https://github.com/Extoren/Zero-g-Reversal/assets/62182617/119b930d-7b28-438b-a0c4-cd0be1c16e46" width="1000" height="400"/></p>
 
 > This repository 
 
