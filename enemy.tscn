@@ -8,7 +8,7 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ch32w"]
 material = SubResource("StandardMaterial3D_7615a")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l3to6"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mhaj0"]
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
 script = ExtResource("1_ahcgo")
@@ -19,10 +19,14 @@ mesh = SubResource("CapsuleMesh_ch32w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_l3to6")
+shape = SubResource("CapsuleShape3D_mhaj0")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 target_desired_distance = 2.0
 path_height_offset = 0.1
+avoidance_enabled = true
+radius = 1.0
+time_horizon_agents = 5.0
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

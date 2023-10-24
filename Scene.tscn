@@ -106,3 +106,9 @@ shape = SubResource("ConvexPolygonShape3D_mldk6")
 
 [node name="Enemy" parent="." instance=ExtResource("3_bi0b7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.73382, -0.0586147, 8.81222)
+
+[node name="Enemy2" parent="." instance=ExtResource("3_bi0b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.73382, -0.0586147, -9.79979)
+
+[node name="Enemy3" parent="." instance=ExtResource("3_bi0b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.00949, -0.0586147, 8.81222)

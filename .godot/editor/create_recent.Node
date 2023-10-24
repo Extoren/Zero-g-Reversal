@@ -1,3 +1,4 @@
+CollisionShape3D
 NavigationAgent3D
 MeshInstance3D
 CharacterBody3D
@@ -7,4 +8,3 @@ NavigationLink3D
 Timer
 DirectionalLight3D
 WorldEnvironment
-CollisionShape3D
