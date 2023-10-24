@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bday37o8v7wik"]
+
+[ext_resource type="PackedScene" uid="uid://wckixu8i8tmv" path="res://Bygning.glb" id="1_5iqn2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnrg4"]
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 1, 0.0823529, 1)
+emission_energy_multiplier = 16.0
+emission_on_uv2 = true
+rim_tint = 0.57
+
+[node name="Bygning" instance=ExtResource("1_5iqn2")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="Cube_020" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103571, 2.14119, -0.49012)
+
+[node name="Cube_019" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103571, 2.14119, -0.49012)
+surface_material_override/0 = SubResource("StandardMaterial3D_qnrg4")

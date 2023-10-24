@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqlyhqq8ob5we"]
+[gd_scene load_steps=10 format=3 uid="uid://bqlyhqq8ob5we"]
 
 [ext_resource type="PackedScene" uid="uid://v8yqyd4bj0eq" path="res://Player.tscn" id="1_ci5pu"]
+[ext_resource type="PackedScene" uid="uid://bday37o8v7wik" path="res://bygning.tscn" id="2_i3gxn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0oj55"]
 
@@ -21,13 +22,13 @@ ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 2
 glow_enabled = true
 glow_intensity = 1.99
-fog_enabled = true
 fog_light_color = Color(0.478431, 0.552941, 0.768627, 1)
-fog_light_energy = 0.21
-fog_density = 0.0
+fog_light_energy = 3.01
+fog_density = 0.0062
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0623
-volumetric_fog_albedo = Color(0.372549, 0.686275, 0.960784, 1)
+volumetric_fog_density = 0.0808
+volumetric_fog_albedo = Color(0.227451, 0.494118, 0.541176, 1)
+volumetric_fog_length = 53.54
 volumetric_fog_detail_spread = 2.7991
 volumetric_fog_ambient_inject = 0.8
 
@@ -71,7 +72,7 @@ shape = SubResource("BoxShape3D_0oj55")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.521792, 2.19157, -1.57753)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.875951, 0.229763, 0.424168, -0.0547849, -0.92098, 0.385739, 0.479279, 0.31465, 0.819321, -9.55098, 5.58923, -1.77806)
+transform = Transform3D(-0.752688, -0.332761, 0.568094, 0.451389, -0.888969, 0.0773483, 0.479279, 0.31465, 0.819321, -9.55098, 5.58923, -1.77806)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -91,7 +92,7 @@ light_indirect_energy = 0.0
 light_volumetric_fog_energy = 11.447
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.965926, 0.119305, 0.229682, -1.61163e-16, -0.887422, 0.460959, 0.258819, -0.445252, -0.857183, 3.88856, 1.85958, -20.7268)
+transform = Transform3D(0.965926, 0.119305, 0.229682, -1.61163e-16, -0.887422, 0.460959, 0.258819, -0.445252, -0.857184, 3.88856, 1.85958, -20.7268)
 light_color = Color(1, 1, 0, 1)
 light_energy = 5.92
 light_indirect_energy = 0.0
@@ -111,12 +112,12 @@ mesh = SubResource("BoxMesh_jj3f8")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="BG"]
-transform = Transform3D(1, 2.50824e-08, 0, -1.00847e-11, 1, 0, 0, 0, 1, -4.75391, -0.0794291, -3.65706)
+transform = Transform3D(1, 2.36845e-08, 0, -6.47089e-11, 1, 0, 0, 0, 1, -4.75956, -0.266674, -3.65706)
 mesh = SubResource("BoxMesh_jj3f8")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="BG"]
-transform = Transform3D(1, 2.58276e-08, 0, -1.00847e-11, 1, 0, 0, 0, 1, -5.46645, -0.295802, -0.376177)
+transform = Transform3D(1, 2.66646e-08, 0, -6.47089e-11, 1, 0, 0, 0, 1, -5.46645, -0.295802, -0.376177)
 mesh = SubResource("BoxMesh_jj3f8")
 skeleton = NodePath("../MeshInstance3D")
 
@@ -128,3 +129,21 @@ skeleton = NodePath("../MeshInstance3D")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BG"]
 transform = Transform3D(1, 5.33629e-09, 0, -1.00847e-11, 1, 0, 0, 0, 1, -0.00368404, -0.122143, 0)
 mesh = SubResource("BoxMesh_jj3f8")
+
+[node name="Bygning" parent="." instance=ExtResource("2_i3gxn")]
+transform = Transform3D(7.07107, 0, -7.07107, 0, 10, 0, 7.07107, 0, 7.07107, -15.0727, -20.6738, -24.8454)
+
+[node name="Bygning2" parent="." instance=ExtResource("2_i3gxn")]
+transform = Transform3D(0.53678, 0, -9.98558, 0, 10, 0, 9.98558, 0, 0.53678, 9.54751, -25.6363, -31.7639)
+
+[node name="Bygning3" parent="." instance=ExtResource("2_i3gxn")]
+transform = Transform3D(0.53678, 0, -9.98558, 0, 10, 0, 9.98558, 0, 0.53678, -5.3661, -10.877, -42.5396)
+
+[node name="Bygning4" parent="." instance=ExtResource("2_i3gxn")]
+transform = Transform3D(-10, 6.18172e-07, -3.89988e-07, -6.18172e-07, -10, 6.18173e-07, -5.63686e-07, 6.18172e-07, 10, -18.4148, 39.1251, -7.77956)
+
+[node name="Bygning5" parent="." instance=ExtResource("2_i3gxn")]
+transform = Transform3D(-7.44043, 6.18172e-07, 6.68131, -4.69268e-08, -10, 8.72967e-07, 6.68131, 6.18172e-07, 7.44043, -8.57635, 43.01, -28.1154)
+
+[node name="Bygning6" parent="." instance=ExtResource("2_i3gxn")]
+transform = Transform3D(-7.44043, 6.18172e-07, 6.68131, -4.69268e-08, -10, 8.72967e-07, 6.68131, 6.18172e-07, 7.44043, 16.4028, 47.3291, -15.8009)
