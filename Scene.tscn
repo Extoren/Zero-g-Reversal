@@ -59,12 +59,12 @@ script = ExtResource("1_wi0j3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.44389)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
-transform = Transform3D(77.138, 0, 0, 0, 10, 0, 0, 0, 67.479, 0, 39.2136, 6.15616)
+transform = Transform3D(77.138, 0, 0, 0, 10, 0, 0, 0, 67.479, 0, 16.6265, 6.15616)
 material_override = SubResource("StandardMaterial3D_sntsg")
 mesh = SubResource("BoxMesh_hkxy3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(77.138, 0, 0, 0, 10, 0, 0, 0, 67.479, 0, 39.2136, 6.15616)
+transform = Transform3D(77.138, 0, 0, 0, 10, 0, 0, 0, 67.479, 0, 16.6265, 6.15616)
 shape = SubResource("ConvexPolygonShape3D_ln12y")
 
 [node name="Player" type="CharacterBody3D" parent="."]

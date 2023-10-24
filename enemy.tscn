@@ -22,3 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_l3to6")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
+path_height_offset = 0.1
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
