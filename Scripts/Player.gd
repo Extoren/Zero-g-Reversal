@@ -25,12 +25,10 @@ func _ready():
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		if grev == true:
-			head.rotate_y(-event.relative.x * SENSITIVITY)  # Invert x-axis rotation
-			camera.rotate_x(-event.relative.y * SENSITIVITY)  # Invert y-axis rotation
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+			camera.rotation.x = clamp(camera.rotation.x - event.relative.y * SENSITIVITY, deg_to_rad(-40), deg_to_rad(60))
+			head.rotate_y(-event.relative.x * SENSITIVITY) 
 		else:
-			camera.rotation.x += event.relative.y * SENSITIVITY
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-70), deg_to_rad(30))
+			camera.rotation.x = clamp(camera.rotation.x - -event.relative.y * SENSITIVITY, deg_to_rad(-70), deg_to_rad(30))
 			camera.rotation.y += event.relative.x * SENSITIVITY
 
 
