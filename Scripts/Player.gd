@@ -29,7 +29,7 @@ func _unhandled_input(event):
 			head.rotate_y(-event.relative.x * SENSITIVITY) 
 		else:
 			camera.rotation.x = clamp(camera.rotation.x - -event.relative.y * SENSITIVITY, deg_to_rad(-70), deg_to_rad(30))
-			camera.rotation.y += event.relative.x * SENSITIVITY
+			head.rotation.y += event.relative.x * SENSITIVITY
 
 
 
