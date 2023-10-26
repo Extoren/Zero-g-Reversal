@@ -27,10 +27,12 @@ func _unhandled_input(event):
 		if grev == true:
 			head.rotate_y(-event.relative.x * SENSITIVITY)  # Invert x-axis rotation
 			camera.rotate_x(-event.relative.y * SENSITIVITY)  # Invert y-axis rotation
-		else:
-			head.rotate_y(event.relative.x * SENSITIVITY)
-			camera.rotate_x(event.relative.y * SENSITIVITY)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		else:
+			camera.rotation.x += event.relative.y * SENSITIVITY
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-70), deg_to_rad(30))
+			camera.rotation.y += event.relative.x * SENSITIVITY
+
 
 
 func _physics_process(delta):
@@ -39,6 +41,7 @@ func _physics_process(delta):
 
 	if not is_on_floor() and grev == false:
 		velocity.y += gravity * delta  # Changed the negative sign
+		
 
 	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or is_on_ceiling()):  # Allow jumping on floor and ceiling
 		grev = !grev
