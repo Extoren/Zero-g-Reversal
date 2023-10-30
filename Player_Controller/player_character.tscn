@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/player_character.gd" id="1_h0t42"]
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/HUD.gd" id="2_tvwwj"]
-[ext_resource type="Texture2D" uid="uid://cnk2ybqwk0gg" path="res://Player_Controller/HUD ASSETS/crosshair020.png" id="3_8jrch"]
+[ext_resource type="Texture2D" uid="uid://bjh5ic6qy4jtl" path="res://Player_Controller/HUD ASSETS/crosshair001.png" id="3_7f0mw"]
 [ext_resource type="Texture2D" uid="uid://uidicgaojgdi" path="res://Player_Controller/HUD ASSETS/crosshair046.png" id="4_l32wb"]
 [ext_resource type="Script" path="res://Player_Controller/scripts/Weapon_State_Machine/Weapon_State_Machine.gd" id="5_wuueu"]
 [ext_resource type="Resource" uid="uid://yc1f2j7pl4vr" path="res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterI.tres" id="6_tpjp5"]
 [ext_resource type="Resource" uid="uid://bwrs8ensewkgc" path="res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterL.tres" id="7_gf6gb"]
 [ext_resource type="Resource" uid="uid://c1jg0ifn7yvve" path="res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterN.tres" id="8_vhb8h"]
-[ext_resource type="PackedScene" uid="uid://bvlnghquw6pe2" path="res://Player_Controller/Weapon_Models/blasterN.glb" id="11_ql478"]
+[ext_resource type="PackedScene" uid="uid://c4j5i0syc1oj8" path="res://Player_Controller/Weapon_Models/blasterF.glb" id="11_0ds1w"]
 [ext_resource type="PackedScene" uid="uid://c7sp7l3lsswwa" path="res://Player_Controller/Weapon_Models/blasterD.glb" id="12_876w4"]
 [ext_resource type="PackedScene" uid="uid://drns2kevx2ak2" path="res://Player_Controller/Weapon_Models/blasterA.glb" id="13_4xj2x"]
 [ext_resource type="AnimationLibrary" uid="uid://uybino34n0sj" path="res://Player_Controller/weapon_animation.res" id="13_lmhsg"]
@@ -150,7 +150,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_8jrch")
+texture = ExtResource("3_7f0mw")
 stretch_mode = 3
 
 [node name="Hit_Sight" type="TextureRect" parent="CanvasLayer"]
@@ -194,7 +194,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.54919, 0)
 transform = Transform3D(-1, 0, 2.53518e-06, 0, 1, 0, -2.53518e-06, 0, -1, 0.193, 1.255, -0.643)
 visible = false
 
-[node name="blasterN" parent="Head/MainCamera/Weapons_Manager/Weapons_Models/blasterN" instance=ExtResource("11_ql478")]
+[node name="blasterF" parent="Head/MainCamera/Weapons_Manager/Weapons_Models/blasterN" instance=ExtResource("11_0ds1w")]
+transform = Transform3D(1, 0, 5.07036e-06, 0, 1, 0, -5.07036e-06, 0, 1, 0.0759997, -0.095, -0.131)
 
 [node name="blasterI" type="Node3D" parent="Head/MainCamera/Weapons_Manager/Weapons_Models"]
 transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, -0.148, 1.379, -0.398)
@@ -207,6 +208,7 @@ transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, 0.117,
 visible = false
 
 [node name="blasterA" parent="Head/MainCamera/Weapons_Manager/Weapons_Models/blasterL" instance=ExtResource("13_4xj2x")]
+transform = Transform3D(1, 0, -3.18323e-12, 0, 1, 0, 3.18323e-12, 0, 1, 2.98023e-08, 0, 1.78814e-07)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Head/MainCamera/Weapons_Manager/Weapons_Models"]
 unique_name_in_owner = true
