@@ -4,3 +4,15 @@ res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterI.t
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterL.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterN.tres
 res://Player_Controller/player_character.tscn
+res://Player_Controller/scripts/Player_Character/HUD.gd
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_State_Machine.gd
+res://Player_Controller/weapon_animation.res
+res://Player_Controller/Spawnable_Objects/Weapons/blaster_L.tscn
+res://blaster_g.tscn
+res://Player_Controller/Spawnable_Objects/Weapons/blaster_g.tscn
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterG.tres
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/no_weapon.tres
+res://Player_Controller/Spawnable_Objects/Weapons/blaster_I.tscn
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterA.tres
+res://Player_Controller/Spawnable_Objects/Weapons/blaster_A.tscn
+res://Player_Controller/Spawnable_Objects/Weapons/blaster_n.tscn

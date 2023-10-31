@@ -10,7 +10,7 @@ signal Connect_Weapon_To_HUD
 
 @export var Animation_Player: AnimationPlayer
 @onready var Bullet_Point = get_node("%BulletPoint")
-@onready var Debug_Bullet = preload("res://Player_Controller/Spawnable_Objects/hit_debug.tscn")
+# @onready var Debug_Bullet = preload("res://Player_Controller/Spawnable_Objects/hit_debug.tscn") This was for a hitpoint marker 3D 
 
 var Melee_Shake:= Vector3(0,0,2.5)
 var Melee_Shake_Magnetude:= Vector4(1,1,1,1)
@@ -43,6 +43,7 @@ func _ready():
 	Initialize(Start_Weapons) #current starts on the first weapon in the stack
 
 func _input(event):
+	
 	if event.is_action_pressed("WeaponUp"):
 		var GetRef = WeaponStack.find(Current_Weapon.Weapon_Name)
 		GetRef = min(GetRef+1,WeaponStack.size()-1)
@@ -78,6 +79,7 @@ func _input(event):
 		
 func Initialize(_Start_Weapons: Array):
 	for Weapons in _weapon_resources:
+		var Projectile_To_Load : PackedScene
 		Weapons.ready()
 		Weapons_List[Weapons.Weapon_Name] = Weapons
 		Connect_Weapon_To_HUD.emit(Weapons)
@@ -225,10 +227,10 @@ func GetCameraCollision(_fire_range: int)->Array:
 	
 	if not Intersection.is_empty():
 		var Collision = [Intersection.collider,Intersection.position]
-		var rd = Debug_Bullet.instantiate()
+		#var rd = Debug_Bullet.instantiate()
 		var world = get_tree().get_root()
-		world.add_child(rd)
-		rd.global_translate(Intersection.position)
+		# world.add_child(rd)
+		# rd.global_translate(Intersection.position)
 		return Collision
 	else:
 		return [null,Ray_End]
@@ -270,6 +272,10 @@ func LaunchProjectile(Point: Vector3):
 func Remove_Exclusion(_RID):
 	Collision_Exclusion.erase(_RID)
 
+# Add a variable to track the maximum number of weapons a player can hold
+var Max_Weapons = 3  # Set this to the desired maximum number of weapons
+
+# Modify the _on_pick_up_detection_body_entered function
 func _on_pick_up_detection_body_entered(body):
 	var Weapon_In_Stack = WeaponStack.find(body._weapon_name,0)
 	
@@ -285,17 +291,16 @@ func _on_pick_up_detection_body_entered(body):
 		
 	elif body.TYPE == "Weapon":
 		if body.Pick_Up_Ready == true:
-			var GetRef = WeaponStack.find(Current_Weapon.Weapon_Name)
-			WeaponStack.insert(GetRef,body._weapon_name)
-
-			#Zero Out Ammo From the Resource
-			Weapons_List[body._weapon_name].Current_Ammo = body._current_ammo
-			Weapons_List[body._weapon_name].Reserve_Ammo = body._reserve_ammo
-
-			Update_WeaponStack.emit(WeaponStack)
-			exit(body._weapon_name)
-
-			body.queue_free()
+			if WeaponStack.size() < Max_Weapons:  # Check if player can pick up more weapons
+				var GetRef = WeaponStack.find(Current_Weapon.Weapon_Name)
+				WeaponStack.insert(GetRef,body._weapon_name)
+				
+				Weapons_List[body._weapon_name].Current_Ammo = body._current_ammo
+				Weapons_List[body._weapon_name].Reserve_Ammo = body._reserve_ammo
+				Update_WeaponStack.emit(WeaponStack)
+				exit(body._weapon_name)
+				
+				body.queue_free()
 
 func Add_Ammo(_Weapon: String, Ammo: int)->int:
 	var _weapon = Weapons_List[_Weapon]
