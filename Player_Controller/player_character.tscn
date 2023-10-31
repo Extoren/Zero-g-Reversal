@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://oc13h3au02ro"]
+[gd_scene load_steps=25 format=3 uid="uid://oc13h3au02ro"]
 
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/player_character.gd" id="1_h0t42"]
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/HUD.gd" id="2_tvwwj"]
@@ -18,7 +18,6 @@
 [ext_resource type="Script" path="res://Player_Controller/scripts/Weapon_State_Machine/weapon_resource.gd" id="12_x2j4t"]
 [ext_resource type="PackedScene" uid="uid://drns2kevx2ak2" path="res://Player_Controller/Weapon_Models/blasterA.glb" id="13_4xj2x"]
 [ext_resource type="AnimationLibrary" uid="uid://uybino34n0sj" path="res://Player_Controller/weapon_animation.res" id="13_lmhsg"]
-[ext_resource type="PackedScene" uid="uid://d0g7bj2r20lo3" path="res://Player_Controller/Weapon_Models/blasterG.glb" id="13_x3rsf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_73v4a"]
 radius = 0.55642
@@ -117,18 +116,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 3.14159, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("blasterG/blasterG:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.222887, 1.40152, -1.27042)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ys4uk"]
@@ -247,12 +234,6 @@ visible = false
 
 [node name="blasterN" parent="Head/MainCamera/Weapons_Manager/Weapons_Models/blasterN" instance=ExtResource("10_no2ca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23872e-07, 0, 0.354231)
-
-[node name="blasterG" type="Node3D" parent="Head/MainCamera/Weapons_Manager/Weapons_Models"]
-visible = false
-
-[node name="blasterG" parent="Head/MainCamera/Weapons_Manager/Weapons_Models/blasterG" instance=ExtResource("13_x3rsf")]
-transform = Transform3D(-1, 3.48787e-16, -8.74227e-08, 3.48787e-16, 1, -3.48787e-16, 8.74227e-08, -3.48787e-16, -1, 0.222887, 1.40152, -1.27042)
 
 [node name="blasterI" type="Node3D" parent="Head/MainCamera/Weapons_Manager/Weapons_Models"]
 transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, -0.148, 1.379, -0.398)

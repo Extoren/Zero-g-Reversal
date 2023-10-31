@@ -273,7 +273,7 @@ func Remove_Exclusion(_RID):
 	Collision_Exclusion.erase(_RID)
 
 # Add a variable to track the maximum number of weapons a player can hold
-var Max_Weapons = 3  # Set this to the desired maximum number of weapons
+var Max_Weapons = 2  # Set this to the desired maximum number of weapons
 
 # Modify the _on_pick_up_detection_body_entered function
 func _on_pick_up_detection_body_entered(body):

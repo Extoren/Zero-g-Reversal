@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dniyrkkdwf3cb"]
+[gd_scene load_steps=15 format=3 uid="uid://dniyrkkdwf3cb"]
 
 [ext_resource type="PackedScene" uid="uid://bwc28g513sfim" path="res://Example World/Objects/World/box_1.tscn" id="2_a2qm0"]
 [ext_resource type="PackedScene" path="res://Example World/Objects/World/target.tscn" id="3_11x65"]
 [ext_resource type="PackedScene" uid="uid://gtthejj2wmyj" path="res://Player_Controller/Spawnable_Objects/Weapons/blaster_n.tscn" id="4_jtbxf"]
 [ext_resource type="PackedScene" uid="uid://bthht566ci62s" path="res://Player_Controller/Spawnable_Objects/Weapons/blaster_I.tscn" id="4_olwnw"]
 [ext_resource type="PackedScene" uid="uid://catx2kysw47d8" path="res://Player_Controller/Spawnable_Objects/Weapons/blaster_L.tscn" id="5_nih8h"]
-[ext_resource type="PackedScene" uid="uid://cj26pv6q16pbk" path="res://Player_Controller/Spawnable_Objects/Weapons/blaster_g.tscn" id="7_t6c0b"]
 [ext_resource type="Environment" uid="uid://bqp54syxqnqww" path="res://Player_Controller/world_environment.tres" id="7_tfq4t"]
 [ext_resource type="PackedScene" uid="uid://dl236agqx8rjp" path="res://Player_Controller/Spawnable_Objects/Clips/blaster_i_clip.tscn" id="9_764ue"]
 [ext_resource type="PackedScene" uid="uid://cjxvrad2c6vh8" path="res://Player_Controller/Spawnable_Objects/Clips/blaster_n_clip.tscn" id="9_qorrx"]
@@ -91,11 +90,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98353, 2.11017, 7.94201)
 [node name="blasterL2" parent="Weapons" instance=ExtResource("5_nih8h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0048, 2.14993, 1.06855)
 freeze = true
-
-[node name="blasterG" parent="Weapons" instance=ExtResource("7_t6c0b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00386119, 2.62316, 7.01703)
-_current_ammo = 10
-_reserve_ammo = 20
 
 [node name="ammo" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.9044, 0, 0)
