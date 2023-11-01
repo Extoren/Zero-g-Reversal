@@ -18,3 +18,7 @@ res://Assets/Props/pipe.tscn
 res://Assets/Bygninger/bygning_1.tscn
 res://Assets/Bygninger/bygning_3.tscn
 res://Assets/Props/generatorog_sign.tscn
+res://Player_Controller/scripts/Weapon_State_Machine/Secondary_Fire_Scripts/ADS.tres
+res://Player_Controller/Spawnable_Objects/grenade_explosion.gdshader
+res://Player_Controller/scripts/Weapon_State_Machine/Secondary_Fire_Scripts/grenadelauncher.tres
+res://Player_Controller/weapon_animation.res
