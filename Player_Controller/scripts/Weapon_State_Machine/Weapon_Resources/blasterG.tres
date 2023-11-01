@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=5 format=3 uid="uid://yaj22fmkfh8a"]
+
+[ext_resource type="PackedScene" uid="uid://dxlkgbr1p580" path="res://Player_Controller/Spawnable_Objects/bullet.tscn" id="1_60pcf"]
+[ext_resource type="Script" path="res://Player_Controller/scripts/Weapon_State_Machine/weapon_resource.gd" id="1_sicik"]
+[ext_resource type="PackedScene" uid="uid://cj26pv6q16pbk" path="res://Player_Controller/Spawnable_Objects/Weapons/blaster_g.tscn" id="3_28o42"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tagi2"]
+
+[resource]
+script = ExtResource("1_sicik")
+Weapon_Name = "blasterG"
+Pick_Up_Anim = "Global/blasterG Active"
+Shoot_Anim = "Global/blasterG Shoot"
+Reload_Anim = "Global/blasterG Reload"
+Change_Anim = "Global/blasterG De-Activate"
+Drop_Anim = "Global/blasterG Drop"
+Out_Of_Ammo_Anim = "Global/blasterG OOA"
+Melee_Anim = "Global/blasterG Melee"
+Current_Ammo = 10
+Reserve_Ammo = 20
+Magazine = 5
+Max_Ammo = 50
+Damage = 5
+Melee_Damage = 5.0
+AutoFire = true
+Fire_Range = 2000
+Can_Be_Dropped = true
+Weapon_Drop = ExtResource("3_28o42")
+Type = 2
+Projectile_To_Load = ExtResource("1_60pcf")
+Projectile_Velocity = 50
+Spray_Type = "Spray_Random"
+Random_Spray_Noise = SubResource("FastNoiseLite_tagi2")
+Base_Magnetude = 0.1
+x_Magnetude = 0.3
+y_Magnetude = 0.3
+z_Magnetude = 0.3

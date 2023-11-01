@@ -1,1 +1,24 @@
 res://Level1.tscn
+res://Player_Controller/world_environment.tres
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterI.tres
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterL.tres
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterN.tres
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterG.tres
+res://README.md
+res://Example World/Objects/World/world.tscn
+res://Player_Controller/player_character.tscn
+res://Player_Controller/Spawnable_Objects/Weapons/blaster_L.tscn
+res://Player_Controller/Spawnable_Objects/Weapons/blaster_g.tscn
+res://Player_Controller/Spawnable_Objects/Weapons/blaster_A.tscn
+res://Player_Controller/Spawnable_Objects/Weapons/blaster_n.tscn
+res://Assets/Bygninger/bygning_2.tscn
+res://Assets/Props/jump_platform.tscn
+res://Assets/Props/shed.tscn
+res://Assets/Props/pipe.tscn
+res://Assets/Bygninger/bygning_1.tscn
+res://Assets/Bygninger/bygning_3.tscn
+res://Assets/Props/generatorog_sign.tscn
+res://Player_Controller/scripts/Weapon_State_Machine/Secondary_Fire_Scripts/ADS.tres
+res://Player_Controller/Spawnable_Objects/grenade_explosion.gdshader
+res://Player_Controller/scripts/Weapon_State_Machine/Secondary_Fire_Scripts/grenadelauncher.tres
+res://Player_Controller/weapon_animation.res

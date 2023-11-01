@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkx62oocbg635"]
+[gd_scene load_steps=15 format=3 uid="uid://bkx62oocbg635"]
 
 [ext_resource type="PackedScene" uid="uid://cfipgelfyt260" path="res://Assets/Bygninger/bygning_1.tscn" id="1_whoye"]
 [ext_resource type="PackedScene" uid="uid://dj34k471eynus" path="res://Assets/Bygninger/bygning_2.tscn" id="2_0e26q"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dkfs35s6y45hp" path="res://Assets/Props/shed.tscn" id="6_6awij"]
 [ext_resource type="PackedScene" uid="uid://ovc14tmwuijm" path="res://Assets/Props/generatorog_sign.tscn" id="6_pk88n"]
 [ext_resource type="PackedScene" uid="uid://r20uuse7wby4" path="res://Assets/Props/pipe.tscn" id="7_ijslx"]
+[ext_resource type="PackedScene" uid="uid://oc13h3au02ro" path="res://Player_Controller/player_character.tscn" id="9_sumfk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_30evk"]
 
@@ -234,3 +235,6 @@ material = SubResource("FogMaterial_b2raa")
 [node name="FogVolume2" type="FogVolume" parent="WorldEnvironment"]
 transform = Transform3D(166.035, 0, 0, 0, 4.30844, 0, 0, 0, 123.566, 18.9642, 44.5086, -24.4606)
 material = SubResource("FogMaterial_b2raa")
+
+[node name="Player_Character" parent="." instance=ExtResource("9_sumfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00285339, 0, 0.278098)
