@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqvkm6i1gydsn"]
+
+[ext_resource type="PackedScene" uid="uid://bsddueo3v4hm1" path="res://Assets/Props/JumpPlatform.glb" id="1_bsl5j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgvvr"]
+size = Vector3(3.35175, 0.0433797, 1)
+
+[node name="JumpPlatform" instance=ExtResource("1_bsl5j")]
+
+[node name="Cube_027" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0121017, 0.112404, -0.241013)
+
+[node name="Cube_015" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0121017, 0.112404, -0.241013)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(0.960094, -0.118112, -0.0602881, 0.124204, 0.915069, -0.00193466, 0.0527931, -0.00485983, 1.10095, -0.415269, 0.204534, 0.0677987)
+shape = SubResource("BoxShape3D_bgvvr")

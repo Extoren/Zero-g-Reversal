@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfipgelfyt260"]
+
+[ext_resource type="PackedScene" uid="uid://c3vh0pfmpln6g" path="res://Assets/Bygninger/Bygning1.glb" id="1_0ly7g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stcfd"]
+emission_enabled = true
+emission = Color(0, 0.647059, 1, 1)
+emission_energy_multiplier = 12.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dyeha"]
+size = Vector3(14.2365, 1, 7.74913)
+
+[node name="Bygning1" instance=ExtResource("1_0ly7g")]
+
+[node name="Cube_030" parent="." index="1"]
+surface_material_override/1 = SubResource("StandardMaterial3D_stcfd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16959, -0.578481, 0.466009)
+shape = SubResource("BoxShape3D_dyeha")

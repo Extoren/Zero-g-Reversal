@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://r20uuse7wby4"]
+
+[ext_resource type="PackedScene" uid="uid://djqn3hb7m5qqn" path="res://Assets/Props/Pipe.glb" id="1_a20am"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajhg4"]
+size = Vector3(2.97318, 1, 0.213917)
+
+[node name="Pipe" instance=ExtResource("1_a20am")]
+
+[node name="BezierCurve_003" parent="." index="0"]
+transform = Transform3D(-1, -1.62921e-07, -1.62921e-07, 1.62921e-07, 0, -1, 1.62921e-07, -1, 0, -9.29236e-05, 0.187369, -0.00986648)
+
+[node name="BezierCurve_006" parent="." index="1"]
+transform = Transform3D(-1, -1.62921e-07, -1.62921e-07, 1.62921e-07, 0, -1, 1.62921e-07, -1, 0, -9.29236e-05, 0.187369, -0.00986648)
+
+[node name="BezierCurve_007" parent="." index="2"]
+transform = Transform3D(-1, -1.62921e-07, -1.62921e-07, 1.62921e-07, 0, -1, 1.62921e-07, -1, 0, -9.29236e-05, 0.187369, -0.00986648)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0594213, -0.00805777)
+shape = SubResource("BoxShape3D_ajhg4")

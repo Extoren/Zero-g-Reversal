@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkfs35s6y45hp"]
+
+[ext_resource type="PackedScene" uid="uid://dw1hgelxmq0vf" path="res://Assets/Props/Shed.glb" id="1_3w5gj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bkqsb"]
+size = Vector3(1.41779, 1, 1)
+
+[node name="Shed" instance=ExtResource("1_3w5gj")]
+
+[node name="Cube_022" parent="." index="0"]
+transform = Transform3D(0, 0, 1.00079, 0, 1.00079, 0, -1.00079, 0, 0, -0.564845, 0.695099, -0.722732)
+
+[node name="Cube_034" parent="." index="1"]
+transform = Transform3D(1.076, 0, 0, 0, 0.714962, 0.344691, 0, -0.225355, 1.09357, -0.831525, 0.658218, -0.754161)
+
+[node name="Cube_016" parent="." index="2"]
+transform = Transform3D(0.733231, 0, 0, 0, 0.687632, 0, 0, 0, 0.733231, 0.357988, 0.717545, 0.0594929)
+
+[node name="Cube_025" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.357988, 0.717545, 0.0594929)
+
+[node name="Cube_035" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.695333, 1.04482, -0.811559)
+
+[node name="Cube_024" parent="." index="5"]
+transform = Transform3D(1.076, 0, 0, 0, 0.714962, 0.344691, 0, -0.225355, 1.09357, -0.831525, 0.658218, -0.754161)
+
+[node name="Cube_039" parent="." index="6"]
+transform = Transform3D(0.747294, 0, 0, 0, 0.687632, 0, 0, 0, 0.747294, 0.357988, 0.717545, 0.0594929)
+
+[node name="Cube_026" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.695333, 1.04482, -0.811559)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="8"]
+transform = Transform3D(1.87212, 0, 0, 0, 1.87212, 0, 0, 0, 1.87212, 0.0484806, 0.740619, 0.0484799)
+shape = SubResource("BoxShape3D_bkqsb")

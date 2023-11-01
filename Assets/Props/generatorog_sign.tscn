@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://ovc14tmwuijm"]
+
+[ext_resource type="PackedScene" uid="uid://b1vxu8slt4eqh" path="res://Assets/Props/GeneratorogSign.glb" id="1_m16n6"]
+[ext_resource type="Texture2D" uid="uid://dwkf3lrnr7kbh" path="res://Assets/Props/Teksturer/SignAlbedo.png" id="2_n05ke"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bq5qc"]
+emission_enabled = true
+emission = Color(1, 0.780392, 0.203922, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4bwr"]
+albedo_texture = ExtResource("2_n05ke")
+emission_enabled = true
+emission_energy_multiplier = 5.04
+emission_texture = ExtResource("2_n05ke")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_adlog"]
+size = Vector3(1.04395, 1.11716, 1)
+
+[node name="GeneratorogSign" instance=ExtResource("1_m16n6")]
+
+[node name="Signpost" parent="." index="0"]
+transform = Transform3D(0, -1, -1.29283e-07, -1, 0, -1.29283e-07, 1.62921e-07, 1.62921e-07, -0.793533, 0.905777, 2.28532, -0.495677)
+
+[node name="Cube_032" parent="." index="1"]
+transform = Transform3D(0.728768, 0, 0, 0, 0.648968, 0, 0, 0, 0.561779, -0.976133, 0.480158, 0.620931)
+surface_material_override/1 = SubResource("StandardMaterial3D_bq5qc")
+
+[node name="Sign" parent="." index="2"]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0.901148, 2.49045, -0.520266)
+surface_material_override/0 = SubResource("StandardMaterial3D_m4bwr")
+
+[node name="BezierCurve_004" parent="." index="3"]
+transform = Transform3D(-0.91198, 0, -0.410234, 0, 1, 0, 0.410234, 0, -0.91198, 0.559199, 2.77232, -0.115247)
+
+[node name="Cube_033" parent="." index="4"]
+transform = Transform3D(0.728768, 0, 0, 0, 0.648968, 0, 0, 0, 0.561779, -0.976133, 0.480158, 0.620931)
+
+[node name="Signpost black" parent="." index="5"]
+transform = Transform3D(0, -1, -1.29283e-07, -1, 0, -1.29283e-07, 1.62921e-07, 1.62921e-07, -0.793533, 0.905777, 2.28532, -0.495677)
+
+[node name="BezierCurve_002" parent="." index="6"]
+transform = Transform3D(-0.91198, 0, -0.410234, 0, 1, 0, 0.410234, 0, -0.91198, 0.559199, 2.77232, -0.115247)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1.46732, 0, 0, 0, 1.38939, 0, 0, 0, 1.18183, -0.97192, 0.488783, 0.641918)
+shape = SubResource("BoxShape3D_adlog")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="8"]
+transform = Transform3D(0.272986, 0, 0, 0, 3.93327, 0, 0, 0, 0.747449, 0.815903, 2.02195, -0.460251)
+shape = SubResource("BoxShape3D_adlog")
