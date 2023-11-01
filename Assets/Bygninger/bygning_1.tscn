@@ -188,8 +188,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sqwfv")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dyeha"]
-size = Vector3(14.2365, 1, 7.74913)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tstwx"]
+points = PackedVector3Array(-11.5115, -31.8256, -7.09695, 11.3813, -31.8256, -7.09695, -11.5115, -31.8256, 7.09695, -7.93957, 5.94206, -4.95452, 11.3813, -31.8256, 7.09695, 7.81382, 5.94206, -4.95452, 7.67264, 8.24445, -3.99863, -7.93957, 5.94206, 4.95313, -6.79224, 8.24445, -3.99863, 7.67264, 8.24445, 3.99724, 7.81382, 5.94206, 4.95313, -6.79224, 8.24445, 3.99724)
 
 [node name="Bygning1" type="StaticBody3D"]
 
@@ -215,5 +215,5 @@ mesh = SubResource("ArrayMesh_psaqp")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16959, -0.578481, 0.466009)
-shape = SubResource("BoxShape3D_dyeha")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.734, -8, 0.492)
+shape = SubResource("ConvexPolygonShape3D_tstwx")

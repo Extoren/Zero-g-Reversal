@@ -124,7 +124,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tc1ik"]
-size = Vector3(1.60191, 1.70789, 1.83518)
+size = Vector3(1.60191, 2.90608, 1.83518)
 
 [node name="Player_Character" type="CharacterBody3D"]
 collision_layer = 2
@@ -207,7 +207,7 @@ wait_time = 0.05
 one_shot = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45147, 0)
 shape = SubResource("CapsuleShape3D_73v4a")
 
 [node name="Head" type="Node3D" parent="."]
@@ -273,11 +273,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.313352, -0.240567, -0.90747
 gizmo_extents = 0.21
 
 [node name="Pick_Up_Detection" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.8311, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pick_Up_Detection"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.389632, 0)
+transform = Transform3D(1, 0, 0, 0, 0.41426, 0, 0, 0, 1, 0, 0.389632, 0)
 shape = SubResource("BoxShape3D_tc1ik")
 
 [connection signal="timeout" from="CanvasLayer/Hit_Sight/Hit_Sight_Timer" to="CanvasLayer" method="_on_hit_sight_timer_timeout"]
