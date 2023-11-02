@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://oc13h3au02ro"]
+[gd_scene load_steps=28 format=3 uid="uid://oc13h3au02ro"]
 
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/player_character.gd" id="1_h0t42"]
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/HUD.gd" id="2_tvwwj"]
@@ -18,6 +18,9 @@
 [ext_resource type="Script" path="res://Player_Controller/scripts/Weapon_State_Machine/weapon_resource.gd" id="12_x2j4t"]
 [ext_resource type="PackedScene" uid="uid://drns2kevx2ak2" path="res://Player_Controller/Weapon_Models/blasterA.glb" id="13_4xj2x"]
 [ext_resource type="AnimationLibrary" uid="uid://uybino34n0sj" path="res://Player_Controller/weapon_animation.res" id="13_lmhsg"]
+[ext_resource type="AudioStream" uid="uid://b707udxhw45ev" path="res://concrete-footsteps-6752.mp3" id="19_o7rlu"]
+[ext_resource type="AudioStream" uid="uid://brcrq571wxcbd" path="res://JUMP.mp3" id="20_6u5ek"]
+[ext_resource type="AudioStream" uid="uid://b2dxijrldbl47" path="res://running-14658.mp3" id="21_0in6p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_73v4a"]
 radius = 0.55642
@@ -280,6 +283,16 @@ collision_mask = 8
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pick_Up_Detection"]
 transform = Transform3D(1, 0, 0, 0, 0.41426, 0, 0, 0, 1, 0, 0.389632, 0)
 shape = SubResource("BoxShape3D_tc1ik")
+
+[node name="Walking" type="AudioStreamPlayer3D" parent="Pick_Up_Detection"]
+transform = Transform3D(1, 0, 0, 0, 0.54612, 0, 0, 0, 1, 0, 0, 0)
+stream = ExtResource("19_o7rlu")
+
+[node name="Jump" type="AudioStreamPlayer3D" parent="Pick_Up_Detection"]
+stream = ExtResource("20_6u5ek")
+
+[node name="Run" type="AudioStreamPlayer3D" parent="Pick_Up_Detection"]
+stream = ExtResource("21_0in6p")
 
 [connection signal="timeout" from="CanvasLayer/Hit_Sight/Hit_Sight_Timer" to="CanvasLayer" method="_on_hit_sight_timer_timeout"]
 [connection signal="Add_Signal_To_HUD" from="Head/MainCamera/Weapons_Manager" to="CanvasLayer" method="_on_weapons_manager_add_signal_to_hud"]

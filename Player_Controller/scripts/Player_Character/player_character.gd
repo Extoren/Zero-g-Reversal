@@ -6,12 +6,21 @@ const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.002
 
+var walking : AudioStreamPlayer3D
+var jump : AudioStreamPlayer3D
+var run : AudioStreamPlayer3D
+
+var sprint_pressed = false
+
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
+
+# Define a variable to keep track of audio state
+var is_audio_playing = false
 
 var grev = true
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -21,6 +30,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	walking = $Pick_Up_Detection/Walking
+	jump = $Pick_Up_Detection/Jump
+	run = $Pick_Up_Detection/Run
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -30,6 +42,11 @@ func _unhandled_input(event):
 		else:
 			camera.rotation.x = clamp(camera.rotation.x - -event.relative.y * SENSITIVITY, deg_to_rad(-70), deg_to_rad(30))
 			head.rotation.y += event.relative.x * SENSITIVITY
+
+func is_moving() -> bool:
+	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
+	return input_dir != Vector2.ZERO
+
 
 
 
@@ -43,6 +60,8 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump.play()
+		is_audio_playing = true
 
 	if Input.is_action_just_pressed("Ability") and (is_on_floor() or is_on_ceiling()):  # Allow jumping on floor and ceiling
 		grev = !grev
@@ -55,11 +74,28 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 			camera.rotation_degrees.z = 180 - camera.rotation_degrees.z  # Flip camera 180 degrees
 
-	if Input.is_action_pressed("Sprint"):
-		speed = SPRINT_SPEED
-	else:
-		speed = WALK_SPEED
+# Check for input and play/stop audio accordingly
+	if is_moving() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right") or Input.is_action_pressed("Up") or Input.is_action_pressed("Down")):
+		if not is_audio_playing:
+			walking.play()
+			is_audio_playing = true
+	else:	
+		if is_audio_playing:
+			walking.stop()
+			is_audio_playing = false
 
+	if Input.is_action_pressed("Sprint"):
+		if not sprint_pressed:
+			sprint_pressed = true
+			speed = SPRINT_SPEED
+			run.play()
+		else: 
+			if sprint_pressed:
+				sprint_pressed = false
+				speed = WALK_SPEED
+				run.stop()
+		
+		
 	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	if is_on_ceiling():
 		input_dir.x *= -1
