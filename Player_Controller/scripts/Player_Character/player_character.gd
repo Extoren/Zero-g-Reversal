@@ -48,8 +48,6 @@ func is_moving() -> bool:
 	return input_dir != Vector2.ZERO
 
 
-
-
 func _physics_process(delta):
 	if not is_on_floor() and grev == true:
 		velocity.y -= gravity * delta
@@ -84,16 +82,7 @@ func _physics_process(delta):
 			walking.stop()
 			is_audio_playing = false
 
-	if Input.is_action_pressed("Sprint"):
-		if not sprint_pressed:
-			sprint_pressed = true
-			speed = SPRINT_SPEED
-			run.play()
-		else: 
-			if sprint_pressed:
-				sprint_pressed = false
-				speed = WALK_SPEED
-				run.stop()
+
 		
 		
 	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
@@ -120,6 +109,17 @@ func _physics_process(delta):
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 
 	move_and_slide()
+
+func _input(event):
+	if event.is_action_pressed("Sprint"):
+		sprint_pressed = true
+		speed = SPRINT_SPEED
+		run.play()
+		walking.stop()
+	elif event.is_action_released("Sprint"):
+		sprint_pressed = false
+		speed = WALK_SPEED
+		run.stop()
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
