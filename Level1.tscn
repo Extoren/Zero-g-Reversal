@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bkx62oocbg635"]
+[gd_scene load_steps=17 format=3 uid="uid://bkx62oocbg635"]
 
+[ext_resource type="Script" path="res://Level1.gd" id="1_t0k1m"]
 [ext_resource type="PackedScene" uid="uid://cfipgelfyt260" path="res://Assets/Bygninger/bygning_1.tscn" id="1_whoye"]
 [ext_resource type="PackedScene" uid="uid://dj34k471eynus" path="res://Assets/Bygninger/bygning_2.tscn" id="2_0e26q"]
 [ext_resource type="PackedScene" uid="uid://123fht58mb4s" path="res://Assets/Bygninger/bygning_3.tscn" id="3_45q5x"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ovc14tmwuijm" path="res://Assets/Props/generatorog_sign.tscn" id="6_pk88n"]
 [ext_resource type="PackedScene" uid="uid://r20uuse7wby4" path="res://Assets/Props/pipe.tscn" id="7_ijslx"]
 [ext_resource type="PackedScene" uid="uid://oc13h3au02ro" path="res://Player_Controller/player_character.tscn" id="9_sumfk"]
+[ext_resource type="AudioStream" uid="uid://don7cofyd7ijj" path="res://Music/Game_music.mp3" id="11_c2ov8"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_30evk"]
 
@@ -41,6 +43,7 @@ density = 0.3625
 albedo = Color(0.458824, 0.694118, 0.870588, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_t0k1m")
 
 [node name="Platformer" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 35.7938, 1.90735e-06, -15.2565)
@@ -238,3 +241,7 @@ material = SubResource("FogMaterial_b2raa")
 
 [node name="Player_Character" parent="." instance=ExtResource("9_sumfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00285339, 0, 0.278098)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_c2ov8")
+volume_db = -16.852
