@@ -1,0 +1,176 @@
+[gd_scene load_steps=14 format=3 uid="uid://c8xiybnifrjdr"]
+
+[ext_resource type="Script" path="res://mainscreen.gd" id="1_aiob5"]
+[ext_resource type="FontFile" uid="uid://o6vtm3o1am1t" path="res://Assets/FINALIZED.otf" id="1_b0lib"]
+[ext_resource type="PackedScene" uid="uid://dj34k471eynus" path="res://Assets/Bygninger/bygning_2.tscn" id="2_rbykc"]
+[ext_resource type="PackedScene" uid="uid://ujppoar5qsxy" path="res://Assets/Bygninger/BuildingProp.glb" id="3_5mwbi"]
+[ext_resource type="PackedScene" uid="uid://djnnubst04ufm" path="res://Assets/Robot/robot.tscn" id="3_73cbs"]
+[ext_resource type="PackedScene" uid="uid://dkfs35s6y45hp" path="res://Assets/Props/shed.tscn" id="4_kxkad"]
+[ext_resource type="PackedScene" uid="uid://ovc14tmwuijm" path="res://Assets/Props/generatorog_sign.tscn" id="5_ybeti"]
+[ext_resource type="PackedScene" uid="uid://r20uuse7wby4" path="res://Assets/Props/pipe.tscn" id="8_4lig0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ulemk"]
+sky_top_color = Color(0.572549, 0.639216, 0.733333, 1)
+sky_energy_multiplier = 1.4
+
+[sub_resource type="Sky" id="Sky_t7fhp"]
+sky_material = SubResource("ProceduralSkyMaterial_ulemk")
+
+[sub_resource type="Environment" id="Environment_q264g"]
+background_mode = 2
+background_energy_multiplier = 1.2
+sky = SubResource("Sky_t7fhp")
+sky_custom_fov = 6.0
+glow_enabled = true
+glow_intensity = 5.04
+glow_strength = 1.3
+fog_enabled = true
+fog_light_color = Color(0.423529, 0.564706, 0.717647, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0409
+volumetric_fog_albedo = Color(0.266667, 0.631373, 0.964706, 1)
+volumetric_fog_emission = Color(0.0901961, 0.0901961, 0.0901961, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_anisotropy = -0.01
+
+[sub_resource type="FogMaterial" id="FogMaterial_dplcp"]
+density = 0.3625
+albedo = Color(0.458824, 0.694118, 0.870588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4yj21"]
+font = ExtResource("1_b0lib")
+font_size = 200
+font_color = Color(0, 0.964706, 0.980392, 1)
+
+[node name="Mainscreen" type="CanvasLayer"]
+script = ExtResource("1_aiob5")
+
+[node name="BG" type="Node3D" parent="."]
+
+[node name="Shed" parent="BG" instance=ExtResource("4_kxkad")]
+transform = Transform3D(-1.48949, 0, -0.0142726, 0, 1.48956, 0, 0.0142726, 0, -1.48949, -6.1982, -0.120831, -14.6904)
+
+[node name="GeneratorogSign" parent="BG" instance=ExtResource("5_ybeti")]
+transform = Transform3D(0.04651, 0.00200477, -1.24929, 0.00219965, 1.25015, 0.00208804, 1.24929, -0.0022758, 0.0465063, -8.72959, -0.102917, -13.4217)
+
+[node name="BuildingProp" parent="BG" instance=ExtResource("3_5mwbi")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -4.33714, -12.5957, -35.6791)
+
+[node name="BuildingProp5" parent="BG" instance=ExtResource("3_5mwbi")]
+transform = Transform3D(0.258819, 8.74228e-08, 0.965926, 2.26267e-08, -1, 8.44439e-08, 0.965926, 7.91728e-25, -0.258819, 23.284, 39.4531, -34.846)
+
+[node name="BuildingProp6" parent="BG" instance=ExtResource("3_5mwbi")]
+transform = Transform3D(0.319717, 8.74228e-08, 0.905028, 2.79505e-08, -1, 7.91201e-08, 1.1932, 7.91728e-25, -0.242502, 4.30076, 47.2349, -46.7879)
+
+[node name="BuildingProp2" parent="BG" instance=ExtResource("3_5mwbi")]
+transform = Transform3D(0.0764232, 0, -0.997075, 0, 1, 0, 0.997075, 0, 0.0764232, -23.0797, -20.4842, -26.4173)
+
+[node name="BuildingProp3" parent="BG" instance=ExtResource("3_5mwbi")]
+transform = Transform3D(-0.113594, 8.74228e-08, 1.03425, -9.9307e-09, -1, 9.04167e-08, 1.48203, 2.32895e-23, 0.0792722, -25.9867, 37.8267, -40.4099)
+
+[node name="BuildingProp4" parent="BG" instance=ExtResource("3_5mwbi")]
+transform = Transform3D(0.113594, -1.74846e-07, -1.03425, 1.98614e-08, 1, -1.80833e-07, 1.48203, 2.24784e-16, 0.0792722, 18.117, -16.9138, -28.8872)
+
+[node name="Bygning2" parent="BG" instance=ExtResource("2_rbykc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26267, 0, -7.97217)
+
+[node name="Robot" parent="BG" instance=ExtResource("3_73cbs")]
+transform = Transform3D(0.855093, 0, -0.518475, 0, 1, 0, 0.518475, 0, 0.855093, -2.79336, 0.237687, -3.93126)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="BG"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="BG/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(3024, 1964)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="BG/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.999978, 0, -0.0065973, 0, 1, 0, 0.0065973, 0, 0.999978, -3.43987, 1.40087, -1.49028)
+fov = 67.8
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="BG"]
+environment = SubResource("Environment_q264g")
+
+[node name="FogVolume" type="FogVolume" parent="BG/WorldEnvironment"]
+transform = Transform3D(166.035, 0, 0, 0, 4.30844, 0, 0, 0, 123.566, 18.9642, -19.5958, -24.4606)
+material = SubResource("FogMaterial_dplcp")
+
+[node name="FogVolume2" type="FogVolume" parent="BG/WorldEnvironment"]
+transform = Transform3D(166.035, 0, 0, 0, 4.30844, 0, 0, 0, 123.566, 18.9642, 29.5001, -24.4606)
+material = SubResource("FogMaterial_dplcp")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1746.0
+offset_bottom = 1239.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 220
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Zero-G Reversal"
+label_settings = SubResource("LabelSettings_4yj21")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_bottom = 0
+
+[node name="Start" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_b0lib")
+theme_override_font_sizes/font_size = 160
+text = "Start"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 50
+
+[node name="Quit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_b0lib")
+theme_override_font_sizes/font_size = 160
+text = "Quit"
+
+[node name="Pipe" parent="." instance=ExtResource("8_4lig0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.1071, -0.158156, -10.6958)
+
+[node name="Pipe3" parent="." instance=ExtResource("8_4lig0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.60872, -0.158156, -9.41828)
+
+[node name="Pipe4" parent="." instance=ExtResource("8_4lig0")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.05199, -0.158156, -9.41828)
+
+[node name="Pipe2" parent="." instance=ExtResource("8_4lig0")]
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

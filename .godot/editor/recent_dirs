@@ -1,4 +1,6 @@
 res://
+res://Assets/Robot
+res://Assets
 res://Player_Controller/scripts/Weapon_State_Machine/Spray Paths
 res://Player_Controller/Spawnable_Objects/Weapons
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/

@@ -1,0 +1,218 @@
+[gd_scene load_steps=5 format=3 uid="uid://djnnubst04ufm"]
+
+[ext_resource type="PackedScene" uid="uid://wnqkf80nvg8c" path="res://Assets/Robot/Robot.glb" id="1_n805q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6c1at"]
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.38
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0x4p7"]
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 4.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3w4w"]
+emission_enabled = true
+emission = Color(0, 0.784314, 1, 1)
+emission_energy_multiplier = 5.14
+
+[node name="Robot" instance=ExtResource("1_n805q")]
+
+[node name="metarig_002" parent="." index="0"]
+transform = Transform3D(1.94258, 0, 0, 0, 1.9246, 0, 0, 0, 1.74956, 0.0175569, 0.668103, 0.043093)
+
+[node name="Skeleton3D" parent="metarig_002" index="0"]
+bones/0/rotation = Quaternion(0.00259828, 2.38418e-07, 6.19473e-10, 0.999997)
+bones/1/rotation = Quaternion(-0.00309133, -0.0495972, -0.941286, 0.333934)
+bones/2/rotation = Quaternion(0.0254026, 0.0263002, -0.388617, 0.920673)
+bones/3/rotation = Quaternion(0.0108557, 0.00991917, -0.17911, 0.983719)
+bones/38/rotation = Quaternion(-0.00753137, 0.0280809, 0.934794, 0.353998)
+bones/39/rotation = Quaternion(0.0162434, -0.0335068, 0.430152, 0.901988)
+bones/53/rotation = Quaternion(0.706306, -0.0316612, -0.707031, 0.0154055)
+bones/56/position = Vector3(0.521583, -0.240795, 0.0446699)
+bones/56/rotation = Quaternion(0.490867, 0.511516, -0.508864, 0.488322)
+bones/56/scale = Vector3(1.78966, 1.78965, 1.78965)
+bones/57/position = Vector3(-0.55622, -0.146897, 0.000126)
+bones/57/rotation = Quaternion(-1.04758e-07, -6.45379e-08, 0.707931, 0.706282)
+
+[node name="Cube_070" parent="metarig_002/Skeleton3D" index="0"]
+transform = Transform3D(0.235861, 0.0972578, 0.0863343, -0.127393, 0.136837, 0.193881, 0.0261479, -0.210617, 0.165831, 0.492945, -0.257877, 0.127428)
+bone_idx = 7
+
+[node name="Cube_079" parent="metarig_002/Skeleton3D" index="1"]
+transform = Transform3D(0.235861, 0.0972578, 0.0863343, -0.127393, 0.136837, 0.193881, 0.0261479, -0.210617, 0.165831, 0.492945, -0.257877, 0.127428)
+bone_idx = 8
+
+[node name="Cube_067" parent="metarig_002/Skeleton3D" index="2"]
+transform = Transform3D(0.233027, 0.098688, 0.0922072, -0.130969, 0.120195, 0.202345, 0.0329924, -0.219902, 0.151979, 0.508307, -0.235537, 0.0963409)
+bone_idx = 9
+
+[node name="Cube_075" parent="metarig_002/Skeleton3D" index="3"]
+transform = Transform3D(0.233027, 0.098688, 0.0922072, -0.130969, 0.120195, 0.202345, 0.0329924, -0.219902, 0.151979, 0.508307, -0.235537, 0.0963409)
+bone_idx = 10
+
+[node name="Cylinder_009" parent="metarig_002/Skeleton3D" index="4"]
+transform = Transform3D(0.233027, 0.0945961, 0.0964005, -0.130969, 0.111306, 0.207367, 0.0329924, -0.226287, 0.142299, 0.518578, -0.222899, 0.0739679)
+bone_idx = 11
+
+[node name="Cube_073" parent="metarig_002/Skeleton3D" index="5"]
+transform = Transform3D(0.235861, 0.129494, 0.0119957, -0.127393, 0.225064, 0.0752345, 0.0261479, -0.0715571, 0.258339, 0.47762, -0.296855, 0.0757605)
+bone_idx = 13
+
+[node name="Cube_080" parent="metarig_002/Skeleton3D" index="6"]
+transform = Transform3D(0.235861, 0.129494, 0.0119957, -0.127393, 0.225064, 0.0752345, 0.0261479, -0.0715571, 0.258339, 0.47762, -0.296855, 0.0757605)
+bone_idx = 14
+
+[node name="Cube_069" parent="metarig_002/Skeleton3D" index="7"]
+transform = Transform3D(0.235861, 0.129494, 0.0119957, -0.127393, 0.225064, 0.0752346, 0.0261479, -0.0715571, 0.258339, 0.497866, -0.263196, 0.0650184)
+bone_idx = 15
+
+[node name="Cube_076" parent="metarig_002/Skeleton3D" index="8"]
+transform = Transform3D(0.235861, 0.129494, 0.0119957, -0.127393, 0.225064, 0.0752346, 0.0261479, -0.0715571, 0.258339, 0.497866, -0.263196, 0.0650184)
+bone_idx = 16
+
+[node name="Cylinder_007" parent="metarig_002/Skeleton3D" index="9"]
+transform = Transform3D(0.235861, 0.129364, 0.0133242, -0.127393, 0.22428, 0.0775406, 0.0261479, -0.0742049, 0.257591, 0.512585, -0.236309, 0.0567428)
+bone_idx = 17
+
+[node name="Cube_068" parent="metarig_002/Skeleton3D" index="10"]
+transform = Transform3D(0.235861, 0.128208, -0.0218023, -0.127393, 0.236853, 0.0146536, 0.026148, -0.00252012, 0.268054, 0.479664, -0.302536, 0.0296531)
+bone_idx = 20
+
+[node name="Cube_078" parent="metarig_002/Skeleton3D" index="11"]
+transform = Transform3D(0.235861, 0.128208, -0.0218023, -0.127393, 0.236853, 0.0146536, 0.026148, -0.00252012, 0.268054, 0.479664, -0.302536, 0.0296531)
+bone_idx = 21
+
+[node name="Cube_072" parent="metarig_002/Skeleton3D" index="12"]
+transform = Transform3D(0.235861, 0.128208, -0.0218022, -0.127393, 0.236853, 0.0146536, 0.0261479, -0.00252012, 0.268054, 0.499715, -0.267095, 0.0293468)
+bone_idx = 22
+
+[node name="Cube_077" parent="metarig_002/Skeleton3D" index="13"]
+transform = Transform3D(0.235861, 0.128208, -0.0218022, -0.127393, 0.236853, 0.0146536, 0.0261479, -0.00252012, 0.268054, 0.499715, -0.267095, 0.0293468)
+bone_idx = 23
+
+[node name="Cylinder_008" parent="metarig_002/Skeleton3D" index="14"]
+transform = Transform3D(0.235861, 0.127621, -0.0250091, -0.127393, 0.237146, 0.00871187, 0.0261479, 0.0041999, 0.268033, 0.513749, -0.239739, 0.0295326)
+bone_idx = 24
+
+[node name="Cube_056" parent="metarig_002/Skeleton3D" index="15"]
+transform = Transform3D(0.235861, 0.129546, -0.0114223, -0.127393, 0.234908, 0.0336517, 0.0261479, -0.0240665, 0.266984, 0.535653, -0.204068, 0.0395072)
+bone_idx = 25
+
+[node name="Cube_066" parent="metarig_002/Skeleton3D" index="16"]
+transform = Transform3D(0.234438, 0.128765, -0.0113533, -0.126624, 0.23349, 0.0334487, 0.0259901, -0.0239212, 0.265373, 0.535653, -0.204068, 0.0395072)
+bone_idx = 26
+
+[node name="Cube_052" parent="metarig_002/Skeleton3D" index="17"]
+transform = Transform3D(-0.00814231, -0.268803, 0.0149034, -0.267126, 0.00621285, -0.0338836, 0.0334724, -0.0158053, -0.266783, 0.600205, 0.0576278, 0.0116637)
+bone_idx = 27
+
+[node name="Cube_062" parent="metarig_002/Skeleton3D" index="18"]
+transform = Transform3D(-0.00814231, -0.268803, 0.0149034, -0.267126, 0.00621285, -0.0338836, 0.0334724, -0.0158053, -0.266783, 0.600205, 0.0576278, 0.0116637)
+bone_idx = 28
+
+[node name="Cylinder_016" parent="metarig_002/Skeleton3D" index="19"]
+transform = Transform3D(0.264948, 0.0451589, -0.0175126, -0.0450186, 0.265525, 0.00361142, 0.0178701, -0.0006254, 0.268744, 0.557349, -0.152055, 0.0352832)
+bone_idx = 29
+
+[node name="Cube_048" parent="metarig_002/Skeleton3D" index="20"]
+transform = Transform3D(0.132115, 0.23439, -0.0122534, -0.233621, 0.132675, 0.01902, 0.022588, 0.00129881, 0.268387, 0.520816, 0.312303, -0.0147841)
+bone_idx = 30
+
+[node name="Cube_054" parent="metarig_002/Skeleton3D" index="21"]
+transform = Transform3D(0.239247, -0.123101, -0.0122534, 0.123691, 0.2385, 0.01902, 0.00215726, -0.0225222, 0.268387, 0.604672, 0.148773, 0.00195838)
+bone_idx = 31
+
+[node name="Cube_057" parent="metarig_002/Skeleton3D" index="22"]
+transform = Transform3D(0.132115, 0.23439, -0.0122534, -0.233621, 0.132675, 0.01902, 0.022588, 0.00129881, 0.268387, 0.520816, 0.312303, -0.0147841)
+bone_idx = 32
+
+[node name="Cube_064" parent="metarig_002/Skeleton3D" index="23"]
+transform = Transform3D(0.243105, -0.125086, -0.012451, 0.125685, 0.242346, 0.0193267, 0.00219205, -0.0228855, 0.272715, 0.604672, 0.148773, 0.00195838)
+bone_idx = 33
+
+[node name="Cube_071" parent="metarig_002/Skeleton3D" index="24"]
+transform = Transform3D(0.246202, 0.108526, -0.0122533, -0.107574, 0.24619, 0.01902, 0.018864, -0.0124921, 0.268387, 0.342464, 0.446491, -0.0318484)
+bone_idx = 34
+
+[node name="Cylinder_013" parent="metarig_002/Skeleton3D" index="25"]
+transform = Transform3D(0.108526, -0.246202, -0.0122534, 0.24619, 0.107574, 0.01902, -0.0124921, -0.018864, 0.268387, 0.379056, 0.46261, -0.0316176)
+bone_idx = 35
+
+[node name="Cylinder_014" parent="metarig_002/Skeleton3D" index="26"]
+transform = Transform3D(0.108526, -0.246202, -0.0122534, 0.24619, 0.107574, 0.01902, -0.0124921, -0.018864, 0.268387, 0.359554, 0.418332, -0.00988878)
+bone_idx = 36
+
+[node name="Cylinder_015" parent="metarig_002/Skeleton3D" index="27"]
+transform = Transform3D(0.108526, -0.246202, -0.0122534, 0.24619, 0.107574, 0.01902, -0.0124921, -0.018864, 0.268387, 0.362848, 0.416668, -0.0470873)
+bone_idx = 37
+
+[node name="Cube_037" parent="metarig_002/Skeleton3D" index="28"]
+transform = Transform3D(-0.00755193, 0.290276, -0.0102634, 0.289878, 0.00688399, -0.0186011, -0.0183401, -0.0107229, -0.289778, -0.557457, -0.144285, 0.00143185)
+bone_idx = 40
+
+[node name="Cube_037" parent="metarig_002/Skeleton3D/Cube_037" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6c1at")
+
+[node name="Cube_038" parent="metarig_002/Skeleton3D" index="29"]
+transform = Transform3D(-0.00700056, 0.269079, -0.00951391, 0.26871, 0.0063813, -0.0172428, -0.0170008, -0.0099399, -0.268617, -0.602311, 0.0716502, -0.0118105)
+bone_idx = 41
+
+[node name="Cube_055" parent="metarig_002/Skeleton3D" index="30"]
+transform = Transform3D(-0.00700056, 0.269079, -0.00951391, 0.26871, 0.0063813, -0.0172428, -0.0170008, -0.0099399, -0.268617, -0.602311, 0.0716502, -0.0118105)
+bone_idx = 42
+
+[node name="Cube_029" parent="metarig_002/Skeleton3D" index="31"]
+transform = Transform3D(0.249185, -0.102039, 0.00617412, 0.101829, 0.249196, 0.00867479, -0.00899886, -0.00569142, 0.269128, -0.340633, 0.446749, -0.0320148)
+bone_idx = 43
+
+[node name="Cube_040" parent="metarig_002/Skeleton3D" index="32"]
+transform = Transform3D(0.236082, 0.129501, 0.00617412, -0.129642, 0.235926, 0.00867479, -0.00123726, -0.0105755, 0.269128, -0.607806, 0.160275, -0.0159169)
+bone_idx = 44
+
+[node name="Cube_059" parent="metarig_002/Skeleton3D" index="33"]
+transform = Transform3D(0.236082, 0.129501, 0.00617412, -0.129642, 0.235926, 0.00867479, -0.00123726, -0.0105755, 0.269128, -0.607806, 0.160275, -0.0159169)
+bone_idx = 45
+
+[node name="Cube_061" parent="metarig_002/Skeleton3D" index="34"]
+transform = Transform3D(0.236082, 0.129501, 0.00617412, -0.129642, 0.235926, 0.00867479, -0.00123726, -0.0105755, 0.269128, -0.607806, 0.160275, -0.0159169)
+bone_idx = 46
+
+[node name="Cube_063" parent="metarig_002/Skeleton3D" index="35"]
+transform = Transform3D(0.250568, 0.137447, 0.00655296, -0.137597, 0.250402, 0.00920707, -0.00131317, -0.0112244, 0.285642, -0.607806, 0.160275, -0.0159169)
+bone_idx = 47
+
+[node name="Cylinder_010" parent="metarig_002/Skeleton3D" index="36"]
+transform = Transform3D(0.102039, 0.249185, 0.00617411, -0.249196, 0.101829, 0.00867479, 0.00569143, -0.00899885, 0.269128, -0.376807, 0.463785, -0.0320307)
+bone_idx = 48
+
+[node name="Cylinder_011" parent="metarig_002/Skeleton3D" index="37"]
+transform = Transform3D(0.102039, 0.249185, 0.00617411, -0.249196, 0.101829, 0.00867479, 0.00569143, -0.00899885, 0.269128, -0.357619, 0.417109, -0.0112509)
+bone_idx = 49
+
+[node name="Cylinder_012" parent="metarig_002/Skeleton3D" index="38"]
+transform = Transform3D(0.102039, 0.249185, 0.00617411, -0.249196, 0.101829, 0.00867479, 0.00569143, -0.00899885, 0.269128, -0.359028, 0.412232, -0.051871)
+bone_idx = 50
+
+[node name="Cube_036" parent="metarig_002/Skeleton3D" index="39"]
+transform = Transform3D(0.269339, -4.48157e-15, 4.70288e-14, 4.58738e-15, 0.269339, -2.06433e-09, -6.08184e-14, 2.05708e-09, 0.269339, 7.71347e-05, 0.415076, 0.213845)
+bone_idx = 51
+
+[node name="Cube_036" parent="metarig_002/Skeleton3D/Cube_036" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_0x4p7")
+
+[node name="Cube_041" parent="metarig_002/Skeleton3D" index="40"]
+transform = Transform3D(0.269339, -4.48157e-15, 4.70288e-14, 4.58738e-15, 0.269339, -2.06433e-09, -6.08184e-14, 2.05708e-09, 0.269339, 7.71347e-05, 0.415076, 0.213845)
+bone_idx = 52
+
+[node name="Cube_043" parent="metarig_002/Skeleton3D" index="41"]
+transform = Transform3D(0.00105954, -0.0046855, 0.269296, 0.262705, 0.0594067, 1.60276e-08, -0.0593973, 0.262664, 0.00480383, 0.0416189, -0.0851305, 0.0160843)
+bone_idx = 54
+
+[node name="Cube_074" parent="metarig_002/Skeleton3D" index="42"]
+transform = Transform3D(0.00105954, -0.0046855, 0.269296, 0.262705, 0.0594067, 1.60276e-08, -0.0593973, 0.262664, 0.00480383, 0.0416189, -0.0851305, 0.0160843)
+bone_idx = 55
+
+[node name="Cube_074" parent="metarig_002/Skeleton3D/Cube_074" index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_r3w4w")

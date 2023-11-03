@@ -1,3 +1,7 @@
+MarginContainer
+Camera3D
+SubViewport
+SubViewportContainer
 AudioStreamPlayer3D
 AudioStreamPlayer
 StaticBody3D
