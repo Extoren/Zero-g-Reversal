@@ -52,7 +52,7 @@ func is_moving() -> bool:
 	return input_dir != Vector2.ZERO
 
 func is_in_air() -> bool:
-	return not is_on_floor()
+	return not (is_on_floor() or is_on_ceiling())
 
 
 func _physics_process(delta):
@@ -63,8 +63,11 @@ func _physics_process(delta):
 		velocity.y += gravity * delta  # Changed the negative sign
 		
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or is_on_ceiling()):
+		if is_on_ceiling():
+			velocity.y = -JUMP_VELOCITY  # Invert the jump when on the ceiling
+		else:
+			velocity.y = JUMP_VELOCITY  # Normal jump behavior when on the floor
 		jump.play()
 		walking.stop()
 
@@ -128,7 +131,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
-	if event.is_action_pressed("Sprint") and is_on_floor():
+	if event.is_action_pressed("Sprint") and (is_on_floor() or is_on_ceiling()):
 		sprint_pressed = true
 		speed = SPRINT_SPEED
 		run.play()
@@ -137,7 +140,7 @@ func _input(event):
 			run.stop() 
 		if not is_in_air():
 			run.play()
-	elif event.is_action_released("Sprint") and is_on_floor():
+	elif event.is_action_released("Sprint") and (is_on_floor() or is_on_ceiling()):
 		sprint_pressed = false
 		speed = WALK_SPEED
 		run.stop()
