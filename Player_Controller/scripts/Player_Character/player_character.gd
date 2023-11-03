@@ -11,6 +11,9 @@ var jump : AudioStreamPlayer3D
 var run : AudioStreamPlayer3D
 
 var sprint_pressed = false
+var is_walking = false
+var is_in_air = false
+
 
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
@@ -60,6 +63,21 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		jump.play()
 		is_audio_playing = true
+		is_walking = true
+		run.stop()
+		walking.stop()
+		
+		if is_walking:
+			walking.stop()
+			is_walking = false
+	else:
+		is_walking = true
+		
+	is_in_air = not is_on_floor()
+	
+	if is_on_floor() and is_in_air:
+		walking.play()
+	
 
 	if Input.is_action_just_pressed("Ability") and (is_on_floor() or is_on_ceiling()):  # Allow jumping on floor and ceiling
 		grev = !grev
