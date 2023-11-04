@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+# Parent: MainNode
+# Children: ChildNode1, ChildNode2
+
 var speed = 4
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
@@ -11,6 +14,7 @@ var jump : AudioStreamPlayer3D
 var run : AudioStreamPlayer3D
 
 var sprint_pressed = false
+var is_walking = false
 
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
@@ -47,6 +51,9 @@ func is_moving() -> bool:
 	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	return input_dir != Vector2.ZERO
 
+func is_in_air() -> bool:
+	return not (is_on_floor() or is_on_ceiling())
+
 
 func _physics_process(delta):
 	if not is_on_floor() and grev == true:
@@ -56,10 +63,32 @@ func _physics_process(delta):
 		velocity.y += gravity * delta  # Changed the negative sign
 		
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or is_on_ceiling()):
+		if is_on_ceiling():
+			velocity.y = -JUMP_VELOCITY  # Invert the jump when on the ceiling
+		else:
+			velocity.y = JUMP_VELOCITY  # Normal jump behavior when on the floor
 		jump.play()
-		is_audio_playing = true
+		walking.stop()
+
+	if is_in_air():
+		walking.stop()
+		run.stop()
+		is_walking = false
+		is_audio_playing = false
+	else:
+		if is_moving() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right") or Input.is_action_pressed("Up") or Input.is_action_pressed("Down")):
+			if not is_audio_playing:
+				walking.play()
+				is_audio_playing = true
+		else:
+			if is_audio_playing:
+				walking.stop()
+				is_audio_playing = false
+				
+			
+
+
 
 	if Input.is_action_just_pressed("Ability") and (is_on_floor() or is_on_ceiling()):  # Allow jumping on floor and ceiling
 		grev = !grev
@@ -71,16 +100,7 @@ func _physics_process(delta):
 		else:
 			velocity.y = JUMP_VELOCITY
 			camera.rotation_degrees.z = 180 - camera.rotation_degrees.z  # Flip camera 180 degrees
-
-# Check for input and play/stop audio accordingly
-	if is_moving() and (Input.is_action_pressed("Left") or Input.is_action_pressed("Right") or Input.is_action_pressed("Up") or Input.is_action_pressed("Down")):
-		if not is_audio_playing:
-			walking.play()
-			is_audio_playing = true
-	else:	
-		if is_audio_playing:
-			walking.stop()
-			is_audio_playing = false
+	
 
 
 		
@@ -111,15 +131,20 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
-	if event.is_action_pressed("Sprint"):
+	if event.is_action_pressed("Sprint") and (is_on_floor() or is_on_ceiling()):
 		sprint_pressed = true
 		speed = SPRINT_SPEED
 		run.play()
 		walking.stop()
-	elif event.is_action_released("Sprint"):
+		if is_in_air():
+			run.stop() 
+		if not is_in_air():
+			run.play()
+	elif event.is_action_released("Sprint") and (is_on_floor() or is_on_ceiling()):
 		sprint_pressed = false
 		speed = WALK_SPEED
 		run.stop()
+
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
