@@ -27,6 +27,7 @@ const FOV_CHANGE = 1.5
 var is_audio_playing = false
 
 var grev = true
+var target_rotation = 0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var head = $Head
@@ -89,8 +90,8 @@ func _physics_process(delta):
 			
 
 
-
-	if Input.is_action_just_pressed("Ability") and (is_on_floor() or is_on_ceiling()):  # Allow jumping on floor and ceiling
+func _process(delta):
+	if Input.is_action_just_pressed("Ability"):  # Allow jumping on floor and ceiling
 		grev = !grev
 		velocity.y = -velocity.y  # Invert the vertical velocity
 
@@ -101,8 +102,19 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 			camera.rotation_degrees.z = 180 - camera.rotation_degrees.z  # Flip camera 180 degrees
 	
+	# Smoothly rotate the camera
+	if camera.rotation_degrees.z != target_rotation:
+		var rotation_step = 10  # Change this value to control the speed of rotation
+		target_rotation = 0
+		camera.rotation_degrees.z += rotation_step if camera.rotation_degrees.z < target_rotation else -rotation_step
 
-
+		# Ensure the rotation does not exceed the target
+		if grev and camera.rotation_degrees.z > target_rotation:
+			camera.rotation_degrees.z = target_rotation
+		elif not grev and camera.rotation_degrees.z < target_rotation:
+			target_rotation = 540
+			camera.rotation_degrees.z = target_rotation
+	
 		
 		
 	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
