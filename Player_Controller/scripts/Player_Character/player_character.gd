@@ -97,10 +97,10 @@ func _process(delta):
 
 		if grev:
 			velocity.y = -JUMP_VELOCITY
-			camera.rotation_degrees.z = -180 + camera.rotation_degrees.z  # Flip camera 180 degrees
+			camera.rotation_degrees.z = -180  # Flip camera 180 degrees
 		else:
 			velocity.y = JUMP_VELOCITY
-			camera.rotation_degrees.z = 180 - camera.rotation_degrees.z  # Flip camera 180 degrees
+			camera.rotation_degrees.z = 180  # Flip camera 180 degrees
 	
 	# Smoothly rotate the camera
 	if camera.rotation_degrees.z != target_rotation:
