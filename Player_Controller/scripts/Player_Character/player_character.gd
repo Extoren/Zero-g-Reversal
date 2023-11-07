@@ -105,16 +105,14 @@ func _process(delta):
 	# Smoothly rotate the camera
 	if camera.rotation_degrees.z != target_rotation:
 		var rotation_step = 10  # Change this value to control the speed of rotation
-		target_rotation = 0
 		camera.rotation_degrees.z += rotation_step if camera.rotation_degrees.z < target_rotation else -rotation_step
 
 		# Ensure the rotation does not exceed the target
 		if grev and camera.rotation_degrees.z > target_rotation:
-			camera.rotation_degrees.z = target_rotation
+			camera.rotation_degrees.z = target_rotation	
 		elif not grev and camera.rotation_degrees.z < target_rotation:
-			target_rotation = 540
 			camera.rotation_degrees.z = target_rotation
-	
+			camera.rotation_degrees.z = 180
 		
 		
 	var input_dir = Input.get_vector("Left", "Right", "Up", "Down")
