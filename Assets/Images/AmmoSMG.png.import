@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxf1pyh6prtxx"
-path="res://.godot/imported/Sirkel.png-a7b195d7925f6b9dd10f5ed3b56bc37d.ctex"
+uid="uid://chenpf51h1fju"
+path="res://.godot/imported/AmmoSMG.png-1365fcbfcf712b617a6fec329dd7740c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Music/Sirkel.png"
-dest_files=["res://.godot/imported/Sirkel.png-a7b195d7925f6b9dd10f5ed3b56bc37d.ctex"]
+source_file="res://Assets/Images/AmmoSMG.png"
+dest_files=["res://.godot/imported/AmmoSMG.png-1365fcbfcf712b617a6fec329dd7740c.ctex"]
 
 [params]
 

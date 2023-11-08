@@ -7,3 +7,4 @@ res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterG.t
 res://Level1.tscn
 res://Player_Controller/player_character.tscn
 res://Player_Controller/scripts/Player_Character/player_character.gd
+res://Player_Controller/player_character.gdshader

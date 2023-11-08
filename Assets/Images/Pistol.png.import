@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lcygmjulvmdx"
-path="res://.godot/imported/SirkelSpin.png-6a135f0f5ddf17f66cf34a32f2af5159.ctex"
+uid="uid://v3wddjqqpc0q"
+path="res://.godot/imported/Pistol.png-68b9d01355024d700d49bcf0a44efaa6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Music/SirkelSpin.png"
-dest_files=["res://.godot/imported/SirkelSpin.png-6a135f0f5ddf17f66cf34a32f2af5159.ctex"]
+source_file="res://Assets/Images/Pistol.png"
+dest_files=["res://.godot/imported/Pistol.png-68b9d01355024d700d49bcf0a44efaa6.ctex"]
 
 [params]
 

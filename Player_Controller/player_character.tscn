@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://oc13h3au02ro"]
+[gd_scene load_steps=40 format=3 uid="uid://oc13h3au02ro"]
 
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/player_character.gd" id="1_h0t42"]
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/HUD.gd" id="2_tvwwj"]
@@ -21,8 +21,11 @@
 [ext_resource type="AudioStream" uid="uid://b707udxhw45ev" path="res://Music/concrete-footsteps-6752.mp3" id="19_m71aq"]
 [ext_resource type="AudioStream" uid="uid://brcrq571wxcbd" path="res://Music/JUMP.mp3" id="20_enb7k"]
 [ext_resource type="AudioStream" uid="uid://b2dxijrldbl47" path="res://Music/running-14658.mp3" id="21_8ebu3"]
-[ext_resource type="Texture2D" uid="uid://lcygmjulvmdx" path="res://Music/SirkelSpin.png" id="22_sp7ds"]
-[ext_resource type="Texture2D" uid="uid://bxf1pyh6prtxx" path="res://Music/Sirkel.png" id="23_qj870"]
+[ext_resource type="Texture2D" uid="uid://lcygmjulvmdx" path="res://Assets/Images/SirkelSpin.png" id="22_dtk8t"]
+[ext_resource type="Texture2D" uid="uid://bxf1pyh6prtxx" path="res://Assets/Images/Sirkel.png" id="23_055ni"]
+[ext_resource type="Texture2D" uid="uid://v3wddjqqpc0q" path="res://Assets/Images/Pistol.png" id="24_joy0f"]
+[ext_resource type="Texture2D" uid="uid://chenpf51h1fju" path="res://Assets/Images/AmmoSMG.png" id="25_w8xf1"]
+[ext_resource type="Texture2D" uid="uid://cmoubip43c1gv" path="res://Assets/Images/AmmoAR.png" id="26_k0jhu"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cqlmy"]
 
@@ -216,6 +219,8 @@ script = ExtResource("1_h0t42")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
 script = ExtResource("2_tvwwj")
 
 [node name="Overlay" type="TextureRect" parent="CanvasLayer"]
@@ -292,7 +297,7 @@ one_shot = true
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1, 2.08165e-12)
 
 [node name="MainCamera" type="Camera3D" parent="Head"]
 unique_name_in_owner = true
@@ -378,15 +383,15 @@ libraries = {
 }
 
 [node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78443, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85666, 0)
 shape = SubResource("CapsuleShape3D_73v4a")
 
 [node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4413, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39554, 0)
 shape = SubResource("CapsuleShape3D_oxom1")
 
 [node name="CrawlingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.04437, -0.288674)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.18985, 0.00206649)
 shape = SubResource("CapsuleShape3D_doflh")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -403,17 +408,48 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("22_sp7ds")
+texture = ExtResource("22_dtk8t")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer/TextureRect"]
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 0
-offset_left = 52.5
-offset_top = 39.0
-offset_right = 278.5
-offset_bottom = 265.0
+offset_left = 51.5
+offset_top = 38.5
+offset_right = 277.5
+offset_bottom = 264.5
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("23_qj870")
+texture = ExtResource("23_055ni")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+modulate = Color(0.462745, 0.462745, 0.462745, 1)
+offset_left = 2210.0
+offset_top = 691.0
+offset_right = 2585.0
+offset_bottom = 889.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+offset_left = 2319.0
+offset_top = 698.5
+offset_right = 2635.0
+offset_bottom = 903.5
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_joy0f")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2"]
+offset_left = 2320.5
+offset_top = 812.0
+offset_right = 3574.5
+offset_bottom = 2092.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("25_w8xf1")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer2"]
+offset_left = 2245.5
+offset_top = 809.0
+offset_right = 3499.5
+offset_bottom = 2089.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("26_k0jhu")
 
 [connection signal="timeout" from="CanvasLayer/Hit_Sight/Hit_Sight_Timer" to="CanvasLayer" method="_on_hit_sight_timer_timeout"]
 [connection signal="Add_Signal_To_HUD" from="Head/MainCamera/Weapons_Manager" to="CanvasLayer" method="_on_weapons_manager_add_signal_to_hud"]
