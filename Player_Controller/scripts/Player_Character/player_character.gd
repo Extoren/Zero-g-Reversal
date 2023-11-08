@@ -13,6 +13,15 @@ var walking : AudioStreamPlayer3D
 var jump : AudioStreamPlayer3D
 var run : AudioStreamPlayer3D
 
+var walkingSpeed = 5.0
+var crouchingSpeed = 3.5
+var crawlSpeed = 2.5
+
+var trueSpeed = walkingSpeed
+
+var isCrouching = false
+var isCrawling = false
+
 var sprint_pressed = false
 var is_walking = false
 
@@ -87,7 +96,23 @@ func _physics_process(delta):
 				walking.stop()
 				is_audio_playing = false
 				
+	
+	if Input.is_action_just_pressed("crouch"):
+		if isCrouching == false:
+			movementStateChange("crouch")
+			trueSpeed = crouchingSpeed
 			
+		elif isCrouching == true:
+			movementStateChange("uncrouch")
+			trueSpeed = walkingSpeed
+			
+	elif Input.is_action_just_pressed("crawl"):
+		if isCrawling == false:
+			movementStateChange("crawl")
+			trueSpeed = crawlSpeed
+		elif isCrawling == true:
+			movementStateChange("uncrawl")
+			trueSpeed = walkingSpeed
 
 
 func _process(delta):
@@ -161,3 +186,53 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func movementStateChange(changeType):
+	match changeType:
+		"crouch":
+			if isCrawling:
+				$AnimationPlayer.play_backwards("CrouchToCrawl")
+			else:
+				$AnimationPlayer.play("StandingToCrouch")
+			isCrouching = true
+			changeCollisionShapeTo("crouching")
+			isCrawling = false
+			
+		"uncrouch":
+			$AnimationPlayer.play_backwards("StandingToCrouch")
+			isCrouching = false
+			isCrawling = false
+			changeCollisionShapeTo("standing")
+
+		"crawl":
+			if isCrouching:
+				$AnimationPlayer.play("CrouchToCrawl")
+			else:
+				$AnimationPlayer.play("StandingToCrawl")
+			isCrouching = false
+			isCrawling = true
+			changeCollisionShapeTo("crawling")
+
+		"uncrawl":
+			$AnimationPlayer.play_backwards("StandingToCrawl")
+			isCrawling = false
+			isCrouching = false
+			changeCollisionShapeTo("standing")
+
+func changeCollisionShapeTo(shape):
+	match shape:
+		"crouching":
+			#Disabled == false is enabled!
+			$CrouchingCollisionShape.disabled = false
+			$CrawlingCollisionShape.disabled = true
+			$StandingCollisionShape.disabled = true
+		"standing":
+			#Disabled == false is enabled!
+			$StandingCollisionShape.disabled = false
+			$CrawlingCollisionShape.disabled = true
+			$CrouchingCollisionShape.disabled = true
+		"crawling":
+			#Disabled == false is enabled!
+			$CrawlingCollisionShape.disabled = false
+			$StandingCollisionShape.disabled = true
+			$CrouchingCollisionShape.disabled = true

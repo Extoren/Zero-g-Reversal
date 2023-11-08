@@ -1,8 +1,13 @@
+TextureRect
+CanvasLayer
+Label
+HBoxContainer
+CollisionShape3D
+AnimationPlayer
 Timer
 Node3D
 AudioStreamPlayer
 AudioStreamPlayer3D
 StaticBody3D
-CollisionShape3D
 MeshInstance3D
 RigidBody3D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://oc13h3au02ro"]
+[gd_scene load_steps=37 format=3 uid="uid://oc13h3au02ro"]
 
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/player_character.gd" id="1_h0t42"]
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/HUD.gd" id="2_tvwwj"]
@@ -21,10 +21,8 @@
 [ext_resource type="AudioStream" uid="uid://b707udxhw45ev" path="res://Music/concrete-footsteps-6752.mp3" id="19_m71aq"]
 [ext_resource type="AudioStream" uid="uid://brcrq571wxcbd" path="res://Music/JUMP.mp3" id="20_enb7k"]
 [ext_resource type="AudioStream" uid="uid://b2dxijrldbl47" path="res://Music/running-14658.mp3" id="21_8ebu3"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_73v4a"]
-radius = 0.55642
-height = 1.7
+[ext_resource type="Texture2D" uid="uid://lcygmjulvmdx" path="res://Music/SirkelSpin.png" id="22_sp7ds"]
+[ext_resource type="Texture2D" uid="uid://bxf1pyh6prtxx" path="res://Music/Sirkel.png" id="23_qj870"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cqlmy"]
 
@@ -129,6 +127,88 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_tc1ik"]
 size = Vector3(1.60191, 2.90608, 1.83518)
 
+[sub_resource type="Animation" id="Animation_obfde"]
+resource_name = "StandingToCrouch"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.55, 0), Vector3(2.08165e-12, 1.5, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_7q3r4"]
+resource_name = "StandingToCrawl"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.55, 0), Vector3(2.08165e-12, 1, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_o67tj"]
+resource_name = "CrouchToCrawl"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.55, 0), Vector3(2.08165e-12, 1, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_thlc8"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.08165e-12, 1, 2.08165e-12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_amy5s"]
+_data = {
+"CrouchToCrawl": SubResource("Animation_o67tj"),
+"RESET": SubResource("Animation_thlc8"),
+"StandingToCrawl": SubResource("Animation_7q3r4"),
+"StandingToCrouch": SubResource("Animation_obfde")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_73v4a"]
+radius = 0.55642
+height = 1.7
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oxom1"]
+radius = 0.556
+height = 1.7
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_doflh"]
+height = 1.0
+
 [node name="Player_Character" type="CharacterBody3D"]
 collision_layer = 2
 floor_max_angle = 0.872665
@@ -185,6 +265,7 @@ text = "Weapon Stack:"
 layout_mode = 2
 
 [node name="Main_Sight" type="TextureRect" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -208,10 +289,6 @@ stretch_mode = 3
 [node name="Hit_Sight_Timer" type="Timer" parent="CanvasLayer/Hit_Sight"]
 wait_time = 0.05
 one_shot = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45147, 0)
-shape = SubResource("CapsuleShape3D_73v4a")
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -294,6 +371,49 @@ stream = ExtResource("20_enb7k")
 
 [node name="Run" type="AudioStreamPlayer3D" parent="Pick_Up_Detection"]
 stream = ExtResource("21_8ebu3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_amy5s")
+}
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78443, 0)
+shape = SubResource("CapsuleShape3D_73v4a")
+
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4413, 0)
+shape = SubResource("CapsuleShape3D_oxom1")
+
+[node name="CrawlingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.04437, -0.288674)
+shape = SubResource("CapsuleShape3D_doflh")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+offset = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 2.08165e-12, 2.08165e-12)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2"]
+offset_left = 1111.5
+offset_top = 836.0
+offset_right = 1281.5
+offset_bottom = 979.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("22_sp7ds")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer/TextureRect"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 0
+offset_left = 52.5
+offset_top = 39.0
+offset_right = 278.5
+offset_bottom = 265.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("23_qj870")
 
 [connection signal="timeout" from="CanvasLayer/Hit_Sight/Hit_Sight_Timer" to="CanvasLayer" method="_on_hit_sight_timer_timeout"]
 [connection signal="Add_Signal_To_HUD" from="Head/MainCamera/Weapons_Manager" to="CanvasLayer" method="_on_weapons_manager_add_signal_to_hud"]

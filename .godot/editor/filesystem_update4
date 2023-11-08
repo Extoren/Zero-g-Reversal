@@ -4,6 +4,6 @@ res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterI.t
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterL.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterN.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterG.tres
-res://Player_Controller/scripts/Player_Character/player_character.gd
 res://Level1.tscn
 res://Player_Controller/player_character.tscn
+res://Player_Controller/scripts/Player_Character/player_character.gd
