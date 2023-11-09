@@ -1,9 +1,11 @@
+MarginContainer
+Label
+Panel
+TextEdit
 Node
 ColorRect
-Panel
 TextureRect
 CanvasLayer
-Label
 HBoxContainer
 CollisionShape3D
 AnimationPlayer
