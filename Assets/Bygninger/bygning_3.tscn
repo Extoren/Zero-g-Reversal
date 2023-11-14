@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://123fht58mb4s"]
+[gd_scene load_steps=24 format=3 uid="uid://123fht58mb4s"]
 
 [ext_resource type="Texture2D" uid="uid://dfxmyfnbk55es" path="res://Assets/Bygninger/Bygning3_Bygning3Albedo.png" id="1_q35w7"]
 [ext_resource type="Texture2D" uid="uid://kvahg2vb6acy" path="res://Assets/Bygninger/Bygning3_Bygning3Metallic-Bygning3Roughness.png" id="2_om77r"]
@@ -45,6 +45,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sds0c")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_82rf7"]
+points = PackedVector3Array(-10.2775, -0.442649, -4.19694, -3.64354, -38.1936, 16.9798, -14.6954, -39.5044, -9.23944, 8.34027, -38.939, -8.86833, 4.59171, -2.09455, 5.57522, -11.5327, -2.1717, 12.2008, 9.02626, -40.0942, 5.57522, 3.68777, -2.1717, -4.84752, -3.64354, -2.09455, 13.1774, -14.5483, -39.2566, 16.43, -11.5327, -2.1717, -4.84502, -3.00969, -40.0942, 16.9798, -10.41, -0.0892375, 11.6963, 4.0131, -1.10187, -3.92917, 9.02626, -38.8245, 5.57522, 4.0131, -1.10187, 4.25891, 7.63367, -36.3788, -8.74129, -3.00969, -38.8245, 16.9798, 4.1542, -2.51684, -4.68088, -10.926, -0.94896, -4.23923, -11.1699, -3.5074, 12.4204)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7yyym"]
 resource_name = "Material.009"
@@ -257,6 +260,10 @@ size = Vector3(14.2365, 1, 7.74913)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8773, -0.229238, 1.08427)
 mesh = SubResource("ArrayMesh_f7bjt")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8773, -0.229238, 1.08427)
+shape = SubResource("ConvexPolygonShape3D_82rf7")
 
 [node name="Cube_018" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, 0, -0.705303, 0.080179, 0.99678, 0, 0.996781, -0.080179, 0, 3.7918, -1.24323, -3.32434)

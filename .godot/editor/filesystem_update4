@@ -6,3 +6,7 @@ res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterN.t
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterG.tres
 res://Level1.tscn
 res://Player_Controller/player_character.tscn
+res://Assets/Robot/robot.tscn
+res://Player_Controller/scripts/Player_Character/player_character.gd
+res://Assets/Bygninger/bygning_3.tscn
+res://Assets/Bygninger/dead-end.tscn

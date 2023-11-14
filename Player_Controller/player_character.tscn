@@ -213,6 +213,7 @@ height = 1.7
 height = 1.0
 
 [sub_resource type="SystemFont" id="SystemFont_pxgsh"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_7y1mg"]
 font = SubResource("SystemFont_pxgsh")
@@ -389,15 +390,15 @@ libraries = {
 }
 
 [node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85666, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34113, 0)
 shape = SubResource("CapsuleShape3D_73v4a")
 
 [node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39554, 0)
+transform = Transform3D(0.999971, 0, -0.00759211, 0, 1, 0, 0.00759211, 0, 0.999971, 0, 1.59383, 0)
 shape = SubResource("CapsuleShape3D_oxom1")
 
 [node name="CrawlingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.18985, 0.00206649)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.33366, 0.00206649)
 shape = SubResource("CapsuleShape3D_doflh")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -418,37 +419,6 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
 alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-texture = ExtResource("22_dtk8t")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer/TextureRect"]
-custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
-layout_mode = 0
-offset_left = 52.0
-offset_top = 39.0
-offset_right = 278.0
-offset_bottom = 265.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("23_055ni")
-
-[node name="Label" type="Label" parent="CanvasLayer2/HBoxContainer/TextureRect"]
-layout_mode = 0
-offset_left = 77.5
-offset_top = 53.0
-offset_right = 93.5
-offset_bottom = 98.0
-text = "F"
-label_settings = SubResource("LabelSettings_7y1mg")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
-modulate = Color(0.462745, 0.462745, 0.462745, 1)
-offset_left = 1114.5
-offset_top = 600.0
-offset_right = 1384.5
-offset_bottom = 743.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
 offset_left = 1270.0
@@ -474,6 +444,33 @@ offset_right = 2388.5
 offset_bottom = 1950.5
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("26_k0jhu")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer2"]
+offset_left = 638.5
+offset_top = 742.5
+offset_right = 808.5
+offset_bottom = 885.5
+size_flags_vertical = 8
+texture = ExtResource("22_dtk8t")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/TextureRect4"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 0
+offset_left = 52.0
+offset_top = 39.0
+offset_right = 279.0
+offset_bottom = 265.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("23_055ni")
+
+[node name="Label" type="Label" parent="CanvasLayer2/TextureRect4"]
+layout_mode = 0
+offset_left = 77.5
+offset_top = 53.0
+offset_right = 93.5
+offset_bottom = 98.0
+text = "F"
+label_settings = SubResource("LabelSettings_7y1mg")
 
 [connection signal="timeout" from="CanvasLayer/Hit_Sight/Hit_Sight_Timer" to="CanvasLayer" method="_on_hit_sight_timer_timeout"]
 [connection signal="Add_Signal_To_HUD" from="Head/MainCamera/Weapons_Manager" to="CanvasLayer" method="_on_weapons_manager_add_signal_to_hud"]
