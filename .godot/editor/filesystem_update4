@@ -1,12 +1,17 @@
-res://Example World/Objects/World/world.tscn
+res://Assets/Robot/robot.tscn
 res://Player_Controller/world_environment.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterI.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterL.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterN.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterG.tres
+res://Example World/Objects/World/world.tscn
 res://Level1.tscn
 res://Player_Controller/player_character.tscn
-res://Assets/Robot/robot.tscn
-res://Player_Controller/scripts/Player_Character/player_character.gd
-res://Assets/Bygninger/bygning_3.tscn
 res://Assets/Bygninger/dead-end.tscn
+res://Assets/Images/health_bar_2d.tscn
+res://Assets/Robot/HealthBar3D.gd
+res://Assets/Images/health_bar_2d.gd
+res://Assets/Images/health_bar_3d.tscn
+res://Assets/Robot/robot.gd
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_State_Machine.gd
+res://Example World/Objects/World/target.tscn

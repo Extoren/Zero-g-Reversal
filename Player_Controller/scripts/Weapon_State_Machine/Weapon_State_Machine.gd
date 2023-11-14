@@ -247,7 +247,10 @@ func HitScanCollision(Collision: Array):
 			var Bullet_Collision = Bullet.intersect_ray(New_Intersection)
 
 			if Bullet_Collision:
-				HitScanDamage(Bullet_Collision.collider, Bullet_Direction,Bullet_Collision.position,Current_Weapon.Damage)
+				HitScanDamage(Bullet_Collision.collider, Bullet_Direction, Bullet_Collision.position, Current_Weapon.Damage)
+				
+				var collider = Bullet_Collision.collider
+				var damage = Current_Weapon.Damage
 
 func HitScanDamage(Collider, Direction, Position, Damage):
 	if Collider.is_in_group("Target") and Collider.has_method("Hit_Successful"):
