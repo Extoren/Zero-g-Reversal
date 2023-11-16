@@ -16,3 +16,5 @@ res://Assets/Bygninger/dead-end.tscn
 res://Player_Controller/scripts/Player_Character/player_character.gd
 res://bullet.tscn
 res://Bullet.gd
+res://Intro.tscn
+res://Intro.gd

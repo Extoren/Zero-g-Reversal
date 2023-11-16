@@ -1,3 +1,6 @@
+AnimationPlayer
+ColorRect
+Sprite2D
 Node3D
 AudioStreamPlayer3D
 RayCast3D
@@ -20,9 +23,7 @@ Label
 Panel
 TextEdit
 Node
-ColorRect
 CanvasLayer
 HBoxContainer
-AnimationPlayer
 AudioStreamPlayer
 RigidBody3D
