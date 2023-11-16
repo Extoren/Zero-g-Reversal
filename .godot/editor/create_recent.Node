@@ -1,3 +1,4 @@
+AudioStreamPlayer3D
 AnimationTree
 StaticBody3D
 CollisionShape3D
@@ -23,5 +24,4 @@ CanvasLayer
 HBoxContainer
 AnimationPlayer
 AudioStreamPlayer
-AudioStreamPlayer3D
 RigidBody3D

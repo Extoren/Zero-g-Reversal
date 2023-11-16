@@ -41,6 +41,8 @@ var Weapons_List = {
 func _ready():
 	Animation_Player.animation_finished.connect(_on_animation_finished)
 	Initialize(Start_Weapons) #current starts on the first weapon in the stack
+	
+
 
 func _input(event):
 	
@@ -115,6 +117,13 @@ func shoot():
 	if Current_Weapon.Current_Ammo != 0:
 		if not Animation_Player.is_playing():
 			Animation_Player.play(Current_Weapon.Shoot_Anim)
+			
+			# Find the "Shoot" AudioStreamPlayer3D node
+			var shoot_node = $"/root/Node3D/Player/Head/MainCamera/Weapons_Manager/Shoot"
+			
+			# Check if the node exists before playing the sound
+			if shoot_node != null:
+				shoot_node.play()
 			Current_Weapon.Current_Ammo -= 1
 			Update_Ammo.emit([Current_Weapon.Current_Ammo, Current_Weapon.Reserve_Ammo])
 			var Camera_Collission =  GetCameraCollision(Current_Weapon.Fire_Range)

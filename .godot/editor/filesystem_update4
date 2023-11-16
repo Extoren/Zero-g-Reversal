@@ -10,3 +10,4 @@ res://Assets/Images/health_bar_3d.tscn
 res://Assets/Robot/robot.gd
 res://mainscreen.tscn
 res://Player_Controller/scripts/Player_Character/robot.gd
+res://Player_Controller/scripts/Weapon_State_Machine/Weapon_State_Machine.gd
