@@ -9,6 +9,9 @@ const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.002
 
+var max_health = 50
+var health = max_health
+
 var walking : AudioStreamPlayer3D
 var jump : AudioStreamPlayer3D
 var run : AudioStreamPlayer3D
@@ -28,6 +31,9 @@ var is_walking = false
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
 var t_bob = 0.0
+
+# signal
+signal player_hit
 
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
@@ -164,7 +170,9 @@ func _process(delta):
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 
 	move_and_slide()
-
+	if dead_end_condition():
+		respawn()
+		
 func _input(event):
 	if event.is_action_pressed("Sprint") and (is_on_floor() or is_on_ceiling()):
 		sprint_pressed = true
@@ -236,3 +244,45 @@ func changeCollisionShapeTo(shape):
 			$CrawlingCollisionShape.disabled = false
 			$StandingCollisionShape.disabled = true
 			$CrouchingCollisionShape.disabled = true
+
+
+# Set this to the initial spawn point
+var initial_spawn_point := Vector3(0, 0, 0)
+
+# This function is called when the player enters a dead-end or any other condition for respawn
+func respawn():
+	global_transform.origin = initial_spawn_point
+
+
+
+func dead_end_condition() -> bool:
+	# Check if the player is below a certain Y coordinate or above a certain Y coordinate limit
+	return global_transform.origin.y < -20 or global_transform.origin.y > 30
+
+const ATTACK_RANGE = 10.0
+
+func Hit_Successful(Damage, _Direction: Vector3 = Vector3.ZERO, _Position: Vector3 = Vector3.ZERO):
+	# Check if the ray from the robot's gun barrel hits the player
+	var ray_origin = global_transform.origin
+	var ray_direction: Vector3
+	if _Direction == Vector3.ZERO:
+		ray_direction = (_Position - ray_origin).normalized()
+	else:
+		ray_direction = _Direction.normalized()
+		
+	var ray_result = get_world_3d().direct_space_state.intersect_ray(ray_origin + ray_direction * ATTACK_RANGE)
+	if ray_result:
+		var hit_node = ray_result["collider"]
+		if hit_node == self:
+			take_damage(Damage)
+
+# Existing code
+
+func take_damage(damage):
+	health -= damage
+	if health <= 0:
+		respawn()  # Call your respawn function or handle player death here
+	
+	else:
+		# You can add other logic here if needed
+		pass

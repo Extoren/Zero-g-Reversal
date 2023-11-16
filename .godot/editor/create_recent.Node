@@ -1,4 +1,7 @@
+Node3D
 AudioStreamPlayer3D
+RayCast3D
+MeshInstance3D
 AnimationTree
 StaticBody3D
 CollisionShape3D
@@ -12,8 +15,6 @@ SubViewport
 ProgressBar
 TextureProgressBar
 Node2D
-MeshInstance3D
-Node3D
 MarginContainer
 Label
 Panel

@@ -266,5 +266,25 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -26.9887
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.9011, 0, -35.8405)
 player_path = NodePath("../../Player")
 
-[node name="Player" parent="." instance=ExtResource("12_xeqfv")]
+[node name="Robot2" parent="NavigationRegion3D" instance=ExtResource("13_wesuo")]
+transform = Transform3D(0.795484, 0, 0.605974, 0, 1, 0, -0.605974, 0, 0.795484, 35.1681, 0, -27.7854)
+player_path = NodePath("../../Player")
+
+[node name="Robot3" parent="NavigationRegion3D" instance=ExtResource("13_wesuo")]
+transform = Transform3D(0.791213, 0, -0.611541, 0, 1, 0, 0.611541, 0, 0.791213, 31.7474, 0, -28.0685)
+player_path = NodePath("../../Player")
+
+[node name="Robot4" parent="NavigationRegion3D" instance=ExtResource("13_wesuo")]
+transform = Transform3D(0.990981, 0, -0.134004, 0, 1, 0, 0.134004, 0, 0.990981, 33.4486, 0, -8.0471)
+player_path = NodePath("../../Player")
+
+[node name="Robot6" parent="NavigationRegion3D" instance=ExtResource("13_wesuo")]
+transform = Transform3D(0.791213, 0, -0.611541, 0, 1, 0, 0.611541, 0, 0.791213, 33.1772, 0, -10.1529)
+player_path = NodePath("../../Player")
+
+[node name="Robot5" parent="NavigationRegion3D" instance=ExtResource("13_wesuo")]
+transform = Transform3D(0.127047, 0, -0.991897, 0, 1, 0, 0.991897, 0, 0.127047, 31.23, 0, -10.6661)
+player_path = NodePath("../../Player")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("12_xeqfv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00285339, 0, 0.278098)

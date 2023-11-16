@@ -11,10 +11,14 @@ const SPEED = 2.0
 const ATTACK_RANGE = 10.0
 const DETECTION_RANGE = 15.0
 
+var bullet = load("res://bullet.tscn")
+var instance
+
 @export var player_path : NodePath 
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
+@onready var gun_barrel = $metarig_002/RayCast3D
 
 func _ready():
 	player = get_node(player_path)
@@ -37,11 +41,18 @@ func take_damage(damage):
 
 func Hit_Successful(Damage, _Direction: Vector3 = Vector3.ZERO, _Position: Vector3 = Vector3.ZERO):
 	take_damage(Damage)
+	
 
 	# Check if the health is less than or equal to 0
 	if Health <= 0:
 		queue_free()
 
+	# Call the function to deal damage to the player
+	deal_damage_to_player(Damage)
+
+# Function to deal damage to the player
+func deal_damage_to_player(damage):
+	player.take_damage(damage)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -57,6 +68,15 @@ func _process(delta):
 				rotation.y = lerp_angle(rotation.y, atan2(-velocity.x, -velocity.z), delta * 10.0)
 			"Attack":
 				look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
+				instance = bullet.instantiate()
+				instance.position = gun_barrel.global_position
+				instance.transform.basis = gun_barrel.global_transform.basis
+				get_parent().add_child(instance)
+				# Find the "Shoot" AudioStreamPlayer3D node
+				var Laser_node = $"Laser"
+				# Check if the node exists before playing the sound
+				if Laser_node != null:
+					Laser_node.play()
 	
 	# Conditions
 	anim_tree.set("parameters/conditions/attack", _target_in_range())

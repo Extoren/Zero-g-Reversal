@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyigtk04d72ko"]
+[gd_scene load_steps=5 format=3 uid="uid://dyigtk04d72ko"]
+
+[ext_resource type="Script" path="res://Assets/Bygninger/dead-end.gd" id="1_wvfmb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1nccy"]
 
@@ -10,6 +12,7 @@ metallic = 1.0
 points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_wvfmb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(2043.85, 0, 0, 0, 1, 0, 0, 0, 1096.21, 0, 0, 0)
