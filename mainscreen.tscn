@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://c8xiybnifrjdr"]
 
-[ext_resource type="Script" path="res://mainscreen.gd" id="1_aiob5"]
 [ext_resource type="FontFile" uid="uid://o6vtm3o1am1t" path="res://Assets/FINALIZED.otf" id="1_b0lib"]
+[ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/mainscreen.gd" id="1_id3q7"]
 [ext_resource type="PackedScene" uid="uid://dj34k471eynus" path="res://Assets/Bygninger/bygning_2.tscn" id="2_rbykc"]
 [ext_resource type="PackedScene" uid="uid://ujppoar5qsxy" path="res://Assets/Bygninger/BuildingProp.glb" id="3_5mwbi"]
-[ext_resource type="PackedScene" uid="uid://djnnubst04ufm" path="res://Assets/Robot/robot.tscn" id="3_73cbs"]
 [ext_resource type="PackedScene" uid="uid://dkfs35s6y45hp" path="res://Assets/Props/shed.tscn" id="4_kxkad"]
 [ext_resource type="PackedScene" uid="uid://ovc14tmwuijm" path="res://Assets/Props/generatorog_sign.tscn" id="5_ybeti"]
+[ext_resource type="PackedScene" uid="uid://djnnubst04ufm" path="res://robot.tscn" id="6_wubl3"]
 [ext_resource type="PackedScene" uid="uid://r20uuse7wby4" path="res://Assets/Props/pipe.tscn" id="8_4lig0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ulemk"]
@@ -43,7 +43,7 @@ font_size = 200
 font_color = Color(0, 0.964706, 0.980392, 1)
 
 [node name="Mainscreen" type="CanvasLayer"]
-script = ExtResource("1_aiob5")
+script = ExtResource("1_id3q7")
 
 [node name="BG" type="Node3D" parent="."]
 
@@ -74,8 +74,9 @@ transform = Transform3D(0.113594, -1.74846e-07, -1.03425, 1.98614e-08, 1, -1.808
 [node name="Bygning2" parent="BG" instance=ExtResource("2_rbykc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26267, 0, -7.97217)
 
-[node name="Robot" parent="BG" instance=ExtResource("3_73cbs")]
+[node name="Robot" parent="BG" instance=ExtResource("6_wubl3")]
 transform = Transform3D(0.855093, 0, -0.518475, 0, 1, 0, 0.518475, 0, 0.855093, -2.79336, 0.237687, -3.93126)
+script = null
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="BG"]
 offset_right = 1920.0

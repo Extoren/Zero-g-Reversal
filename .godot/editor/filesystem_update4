@@ -1,10 +1,12 @@
-res://Example World/Objects/World/world.tscn
-res://Player_Controller/world_environment.tres
+res://Level1.tscn
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterI.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterL.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterN.tres
 res://Player_Controller/scripts/Weapon_State_Machine/Weapon_Resources/blasterG.tres
-res://Level1.tscn
-res://Player_Controller/player_character.tscn
-res://Assets/Robot/robot.tscn
+res://mainscreen.gd
+res://robot.tscn
+res://player.tscn
 res://Assets/Images/health_bar_3d.tscn
+res://Assets/Robot/robot.gd
+res://mainscreen.tscn
+res://Player_Controller/scripts/Player_Character/robot.gd

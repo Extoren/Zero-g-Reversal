@@ -8,7 +8,7 @@
 [ext_resource type="Environment" uid="uid://bqp54syxqnqww" path="res://Player_Controller/world_environment.tres" id="7_tfq4t"]
 [ext_resource type="PackedScene" uid="uid://dl236agqx8rjp" path="res://Player_Controller/Spawnable_Objects/Clips/blaster_i_clip.tscn" id="9_764ue"]
 [ext_resource type="PackedScene" uid="uid://cjxvrad2c6vh8" path="res://Player_Controller/Spawnable_Objects/Clips/blaster_n_clip.tscn" id="9_qorrx"]
-[ext_resource type="PackedScene" uid="uid://oc13h3au02ro" path="res://Player_Controller/player_character.tscn" id="10_nucft"]
+[ext_resource type="PackedScene" uid="uid://oc13h3au02ro" path="res://player.tscn" id="10_nucft"]
 [ext_resource type="PackedScene" uid="uid://br6g3dtbytwpu" path="res://Player_Controller/Spawnable_Objects/Clips/blaster_L_clip.tscn" id="11_xavrm"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_dy3b6"]
