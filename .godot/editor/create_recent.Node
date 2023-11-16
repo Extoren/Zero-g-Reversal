@@ -1,3 +1,4 @@
+TextureRect
 Timer
 Sprite3D
 SubViewport
@@ -14,7 +15,6 @@ Panel
 TextEdit
 Node
 ColorRect
-TextureRect
 CanvasLayer
 HBoxContainer
 AnimationPlayer

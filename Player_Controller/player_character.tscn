@@ -390,35 +390,22 @@ libraries = {
 }
 
 [node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34113, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999983, 0.00589918, 0, -0.00589918, 0.999983, 0, 1.22405, 0.000812744)
 shape = SubResource("CapsuleShape3D_73v4a")
 
 [node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.999971, 0, -0.00759211, 0, 1, 0, 0.00759211, 0, 0.999971, 0, 1.59383, 0)
+transform = Transform3D(0.999971, -9.00207e-20, -0.00759211, 4.47872e-05, 0.999983, 0.00589901, 0.00759198, -0.00589918, 0.999954, 0, 1.32147, -0.000812744)
 shape = SubResource("CapsuleShape3D_oxom1")
 
 [node name="CrawlingCollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.33366, 0.00206649)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.13033, 0.00206649)
 shape = SubResource("CapsuleShape3D_doflh")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+visible = false
 offset = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 2.08165e-12, 2.08165e-12)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -85.0
-offset_top = -143.0
-offset_right = 85.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 8
-alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
 offset_left = 1270.0
