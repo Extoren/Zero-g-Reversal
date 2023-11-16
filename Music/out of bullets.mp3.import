@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbjbwgqyf4y3a"
+path="res://.godot/imported/out of bullets.mp3-cc2666f306e1c797877a1b951e8ccdf7.mp3str"
+
+[deps]
+
+source_file="res://Music/out of bullets.mp3"
+dest_files=["res://.godot/imported/out of bullets.mp3-cc2666f306e1c797877a1b951e8ccdf7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

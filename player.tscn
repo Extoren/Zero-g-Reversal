@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://oc13h3au02ro"]
+[gd_scene load_steps=45 format=3 uid="uid://oc13h3au02ro"]
 
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/player_character.gd" id="1_h0t42"]
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/HUD.gd" id="2_tvwwj"]
@@ -21,7 +21,9 @@
 [ext_resource type="AudioStream" uid="uid://b1c7yhs8n0ycw" path="res://Music/shoot.mp3" id="19_2fcsx"]
 [ext_resource type="AudioStream" uid="uid://b707udxhw45ev" path="res://Music/concrete-footsteps-6752.mp3" id="19_m71aq"]
 [ext_resource type="AudioStream" uid="uid://brcrq571wxcbd" path="res://Music/JUMP.mp3" id="20_enb7k"]
+[ext_resource type="AudioStream" uid="uid://bbjbwgqyf4y3a" path="res://Music/out of bullets.mp3" id="20_jdasj"]
 [ext_resource type="AudioStream" uid="uid://b2dxijrldbl47" path="res://Music/running-14658.mp3" id="21_8ebu3"]
+[ext_resource type="AudioStream" uid="uid://rrqtdqqjsa0v" path="res://Music/Reload.mp3" id="21_40ytq"]
 [ext_resource type="Texture2D" uid="uid://lcygmjulvmdx" path="res://Assets/Images/SirkelSpin.png" id="22_dtk8t"]
 [ext_resource type="Texture2D" uid="uid://bxf1pyh6prtxx" path="res://Assets/Images/Sirkel.png" id="23_055ni"]
 [ext_resource type="Texture2D" uid="uid://v3wddjqqpc0q" path="res://Assets/Images/Pistol.png" id="24_joy0f"]
@@ -368,6 +370,13 @@ gizmo_extents = 0.21
 [node name="Shoot" type="AudioStreamPlayer3D" parent="Head/MainCamera/Weapons_Manager"]
 stream = ExtResource("19_2fcsx")
 volume_db = -9.143
+
+[node name="OutOfBullets" type="AudioStreamPlayer3D" parent="Head/MainCamera/Weapons_Manager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.54919, 0)
+stream = ExtResource("20_jdasj")
+
+[node name="Reload" type="AudioStreamPlayer3D" parent="Head/MainCamera/Weapons_Manager"]
+stream = ExtResource("21_40ytq")
 
 [node name="Pick_Up_Detection" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.8311, 0, 0, 0, 1, 0, 0, 0)

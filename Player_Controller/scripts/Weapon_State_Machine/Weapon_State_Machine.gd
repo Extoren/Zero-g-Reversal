@@ -142,7 +142,10 @@ func reload():
 		return
 	elif not Animation_Player.is_playing():
 		
-		if Current_Weapon.Reserve_Ammo != 0:		
+		if Current_Weapon.Reserve_Ammo != 0:
+			var Reload_node = $"/root/Node3D/Player/Head/MainCamera/Weapons_Manager/Reload"
+			if Reload_node != null:
+				Reload_node.play()
 			if Current_Weapon.Secondary_Mode == true:
 				reset_secondary()
 				
@@ -150,6 +153,9 @@ func reload():
 
 		else:
 			Animation_Player.queue(Current_Weapon.Out_Of_Ammo_Anim)
+			var OutOfBullets_node = $"/root/Node3D/Player/Head/MainCamera/Weapons_Manager/OutOfBullets"
+			if OutOfBullets_node != null:
+				OutOfBullets_node.play()
 
 func Calculate_Reload():
 	var Reload_Amount = min(Current_Weapon.Magazine-Current_Weapon.Current_Ammo,Current_Weapon.Magazine,Current_Weapon.Reserve_Ammo)
