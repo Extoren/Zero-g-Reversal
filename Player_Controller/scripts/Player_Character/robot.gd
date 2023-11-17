@@ -47,13 +47,6 @@ func Hit_Successful(Damage, _Direction: Vector3 = Vector3.ZERO, _Position: Vecto
 	if Health <= 0:
 		queue_free()
 
-	# Call the function to deal damage to the player
-	deal_damage_to_player(Damage)
-
-# Function to deal damage to the player
-func deal_damage_to_player(damage):
-	player.take_damage(damage)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	velocity = Vector3.ZERO

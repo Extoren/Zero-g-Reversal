@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://oc13h3au02ro"]
+[gd_scene load_steps=47 format=3 uid="uid://oc13h3au02ro"]
 
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/player_character.gd" id="1_h0t42"]
 [ext_resource type="Script" path="res://Player_Controller/scripts/Player_Character/HUD.gd" id="2_tvwwj"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://v3wddjqqpc0q" path="res://Assets/Images/Pistol.png" id="24_joy0f"]
 [ext_resource type="Texture2D" uid="uid://chenpf51h1fju" path="res://Assets/Images/AmmoSMG.png" id="25_w8xf1"]
 [ext_resource type="Texture2D" uid="uid://cmoubip43c1gv" path="res://Assets/Images/AmmoAR.png" id="26_k0jhu"]
+[ext_resource type="PackedScene" uid="uid://dbbfrmf6xrwhe" path="res://health_bar_3d_player.tscn" id="30_bjouy"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cqlmy"]
 
@@ -129,6 +130,9 @@ tracks/4/keys = {
 _data = {
 "RESET": SubResource("Animation_tvd50")
 }
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_takav"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tc1ik"]
 size = Vector3(1.60191, 2.90608, 1.83518)
@@ -369,7 +373,7 @@ gizmo_extents = 0.21
 
 [node name="Shoot" type="AudioStreamPlayer3D" parent="Head/MainCamera/Weapons_Manager"]
 stream = ExtResource("19_2fcsx")
-volume_db = -22.858
+max_db = -15.571
 
 [node name="OutOfBullets" type="AudioStreamPlayer3D" parent="Head/MainCamera/Weapons_Manager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.54919, 0)
@@ -377,6 +381,10 @@ stream = ExtResource("20_jdasj")
 
 [node name="Reload" type="AudioStreamPlayer3D" parent="Head/MainCamera/Weapons_Manager"]
 stream = ExtResource("21_40ytq")
+
+[node name="Sprite3D" type="Sprite3D" parent="Head/MainCamera"]
+transform = Transform3D(0.317588, 0, 0, 0, 0.371329, 0, 0, 0, 1, -2.08165e-12, 0.313871, -0.520418)
+texture = SubResource("ViewportTexture_takav")
 
 [node name="Pick_Up_Detection" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.8311, 0, 0, 0, 1, 0, 0, 0)
@@ -471,6 +479,11 @@ offset_right = 93.5
 offset_bottom = 98.0
 text = "F"
 label_settings = SubResource("LabelSettings_7y1mg")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="HealthBar3DPlayer" parent="SubViewport" instance=ExtResource("30_bjouy")]
 
 [connection signal="timeout" from="CanvasLayer/Hit_Sight/Hit_Sight_Timer" to="CanvasLayer" method="_on_hit_sight_timer_timeout"]
 [connection signal="Add_Signal_To_HUD" from="Head/MainCamera/Weapons_Manager" to="CanvasLayer" method="_on_weapons_manager_add_signal_to_hud"]

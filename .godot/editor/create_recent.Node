@@ -1,3 +1,6 @@
+Sprite3D
+SubViewport
+ProgressBar
 AnimationPlayer
 ColorRect
 Sprite2D
@@ -13,9 +16,6 @@ NavigationRegion3D
 NavigationAgent3D
 TextureRect
 Timer
-Sprite3D
-SubViewport
-ProgressBar
 TextureProgressBar
 Node2D
 MarginContainer

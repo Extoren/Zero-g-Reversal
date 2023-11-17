@@ -25,6 +25,8 @@ var trueSpeed = walkingSpeed
 var isCrouching = false
 var isCrawling = false
 
+var HealthBar3D: ProgressBar
+
 var sprint_pressed = false
 var is_walking = false
 
@@ -32,8 +34,8 @@ const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
-# signal
-signal player_hit
+var Health = 10
+var MaxHealth = 10
 
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
@@ -53,6 +55,9 @@ func _ready():
 	walking = $Pick_Up_Detection/Walking
 	jump = $Pick_Up_Detection/Jump
 	run = $Pick_Up_Detection/Run
+	
+	HealthBar3D = $SubViewport/HealthBar3DPlayer
+	HealthBar3D.max_value = MaxHealth  # Set max_value to the initial maximum health
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -259,30 +264,12 @@ func dead_end_condition() -> bool:
 	# Check if the player is below a certain Y coordinate or above a certain Y coordinate limit
 	return global_transform.origin.y < -20 or global_transform.origin.y > 30
 
-const ATTACK_RANGE = 10.0
-
-func Hit_Successful(Damage, _Direction: Vector3 = Vector3.ZERO, _Position: Vector3 = Vector3.ZERO):
-	# Check if the ray from the robot's gun barrel hits the player
-	var ray_origin = global_transform.origin
-	var ray_direction: Vector3
-	if _Direction == Vector3.ZERO:
-		ray_direction = (_Position - ray_origin).normalized()
-	else:
-		ray_direction = _Direction.normalized()
-		
-	var ray_result = get_world_3d().direct_space_state.intersect_ray(ray_origin + ray_direction * ATTACK_RANGE)
-	if ray_result:
-		var hit_node = ray_result["collider"]
-		if hit_node == self:
-			take_damage(Damage)
-
-# Existing code
 
 func take_damage(damage):
-	health -= damage
-	if health <= 0:
-		respawn()  # Call your respawn function or handle player death here
-	
-	else:
-		# You can add other logic here if needed
-		pass
+	if health > 0:
+		health -= damage
+		HealthBar3D.value = health
+		if health <= 0:
+			# Player is defeated or game over logic here
+			print("Game Over")
+			respawn()  # You may want to respawn the player or handle game over in some way
